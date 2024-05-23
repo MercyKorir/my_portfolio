@@ -11,9 +11,7 @@
 
 .footerContent {
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -31,6 +29,7 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin-left: -100px;
 }
 
 .navItems .linkItem {
@@ -42,20 +41,19 @@
 
 .socialLinks {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 50px;
-  margin-right: 80px;
 }
 
 .socialLinks span {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .githubIcon {
-    color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .mailIcon {
-    color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }

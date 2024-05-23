@@ -10,8 +10,12 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
-      <NavigationButtons />
-      <main className={styles.mainContainer}>{children}</main>
+      <main className={styles.mainContainer}>
+        <span className={styles.navigation}>
+          <NavigationButtons />
+        </span>
+        {children}
+      </main>
       <Footer />
     </div>
   );

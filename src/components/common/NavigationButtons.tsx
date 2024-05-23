@@ -21,8 +21,12 @@ const NavigationButtons: React.FC = () => {
 
   return (
     <div className={styles.navBtnContainer}>
-      <button onClick={() => handleNavigation(prevRoute.path)}>Prev</button>
-      <button onClick={() => handleNavigation(nextRoute.path)}>Next</button>
+      <span className={`${styles.buttonOuterLayer} ${styles.outerLayerPrev}`}>
+        <button onClick={() => handleNavigation(prevRoute.path)}></button>
+      </span>
+      <span className={`${styles.buttonOuterLayer} ${styles.outerLayerNext}`}>
+        <button onClick={() => handleNavigation(nextRoute.path)}></button>
+      </span>
     </div>
   );
 };
