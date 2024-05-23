@@ -1,20 +1,15 @@
 import React from "react";
 import Ellipse from "../../../public/images/Ellipsebg.svg";
 import Ellipse2 from "../../../public/images/Ellipsebg2.svg";
-import MercyImage from "../../../public/images/Mercy.png";
-import MercyLogo from '../../../public/images/Logo.png'
+import MercyLogo from "../../../public/images/Logo.png";
 import Image from "next/image";
-import styles from '../../styles/Home.module.css'
+import styles from "../../styles/Home.module.css";
 
 interface HomeSectionProps {}
 
 const HomeSection: React.FC<HomeSectionProps> = () => {
   return (
     <div className={styles.homeContainer}>
-      {/* <div className="flex flex-row justify-between">
-          <button>Prev</button>
-          <button>Next</button>
-        </div> */}
       <div className={styles.homeContent}>
         <div className={styles.leftText}>
           <h1>Hello.</h1>

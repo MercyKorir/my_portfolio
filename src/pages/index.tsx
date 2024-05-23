@@ -3,7 +3,7 @@ import HomeSection from "@/components/home";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Layout>
         <HomeSection />
       </Layout>

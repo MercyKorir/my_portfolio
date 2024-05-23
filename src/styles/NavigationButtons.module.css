@@ -1,0 +1,16 @@
+.navBtnContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.navBtnContainer button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #f08a8a;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
