@@ -1,0 +1,61 @@
+.footerContainer {
+  height: 10%;
+  width: 100%;
+  padding: 80px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* border-top: 1px solid #e9ecef; */
+}
+
+.footerContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nameLogo h3 {
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.navItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.navItems .linkItem {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(30, 30, 30, 0.4);
+  text-decoration: none;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-right: 80px;
+}
+
+.socialLinks span {
+    font-size: 30px;
+}
+
+.githubIcon {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mailIcon {
+    color: rgba(255, 255, 255, 0.6);
+}
