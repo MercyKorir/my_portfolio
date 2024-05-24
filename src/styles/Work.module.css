@@ -105,6 +105,11 @@
   background-repeat: no-repeat;
 }
 
+.projectsList.fadeIn {
+  opacity: 1;
+  animation: fadeInAnimation 2s ease-in-out;
+}
+
 .projectsContent {
   width: 100%;
   min-height: 100vh;
@@ -139,3 +144,25 @@
   align-items: center;
   gap: 30px;
 }
+
+@keyframes fadeInAnimation {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* @keyframes fadeOutAnimation {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+} */

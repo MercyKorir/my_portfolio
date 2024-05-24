@@ -2,6 +2,7 @@ import React from "react";
 import WorkCard from "./WorkCard";
 import ProjectCard from "./ProjectCard";
 import styles from "../../styles/Work.module.css";
+import userIntersectionObserver from "@/hooks/userIntersectionObserver";
 
 interface WorkSectionProps {}
 
@@ -33,19 +34,19 @@ const projectData = [
     title: "Course Web Application",
     description: "A full stack e-commerce platform.",
     imageName: "courseapp-img.png",
-    demoUrl:
-      "/videos/course-app-demo.mp4",
+    demoUrl: "/videos/course-app-demo.mp4",
   },
   {
     title: "Crypto Dashboard",
     description: "A personal portfolio website.",
     imageName: "cryptoapp-img.png",
-    demoUrl:
-      "/videos/crypto-dashboard-demo.mp4",
+    demoUrl: "/videos/crypto-dashboard-demo.mp4",
   },
 ];
 
 const WorkSection: React.FC<WorkSectionProps> = () => {
+  const { isVisible, containerRef } = userIntersectionObserver();
+
   return (
     <div className={styles.workContainer}>
       <div className={styles.workContent}>
@@ -82,7 +83,12 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
         <div className={styles.projectsContainer}>
           <div className={styles.projectsContent}>
             <h4 className={styles.projectsTitle}>My Projects</h4>
-            <div className={styles.projectsList}>
+            <div
+              className={`${styles.projectsList} ${
+                isVisible ? styles.fadeIn : ""
+              }`}
+              ref={containerRef}
+            >
               {projectData.map((project, index) => (
                 <ProjectCard
                   key={index}
