@@ -1,26 +1,37 @@
 import React from "react";
 import Image from "next/image";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styles from "../../styles/WorkCard.module.css";
 
 interface WorkCardProps {
   title: string;
+  organization: string;
   imageName: string;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, imageName }) => {
+const WorkCard: React.FC<WorkCardProps> = ({
+  title,
+  organization,
+  imageName,
+}) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardContent}>
-        <div className={styles.cardImage}>
+        <div className={styles.cardImageContainer}>
           <Image
             src={`/images/${imageName}`}
             alt={title}
             width={320}
             height={200}
+            className={styles.cardImage}
           />
         </div>
         <div className={styles.cardTitle}>
-            <h3>{title}</h3>
+          <h3>{title}</h3>
+          <p>{organization}</p>
+          <span onClick={() => console.log("Clicked Me!")}>
+            <ExpandMoreIcon fontSize="inherit" />
+          </span>
         </div>
       </div>
     </div>

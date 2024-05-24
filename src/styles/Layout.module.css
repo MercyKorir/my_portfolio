@@ -19,7 +19,7 @@
 
 .navigation {
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 0;
   z-index: 100;
   width: 100vw;

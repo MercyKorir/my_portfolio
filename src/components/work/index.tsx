@@ -5,10 +5,26 @@ import styles from "../../styles/Work.module.css";
 interface WorkSectionProps {}
 
 const workData = [
-  { title: "Full Stack Developer", imageName: "project1.jpg" },
-  { title: "Full Stack Developer", imageName: "project1.jpg" },
-  { title: "Front End Developer", imageName: "project1.jpg" },
-  { title: "Full Stack Developer", imageName: "project1.jpg" },
+  {
+    title: "Full Stack Developer",
+    organization: "Organic Kitchen Gardens Kenya",
+    imageName: "org-image.png",
+  },
+  {
+    title: "Full Stack Developer",
+    organization: "Freelancer Platform",
+    imageName: "freelancer-logo.png",
+  },
+  {
+    title: "Front End Developer",
+    organization: "Upsurge Solutions Kenya",
+    imageName: "minister-image.png",
+  },
+  {
+    title: "Full Stack Developer",
+    organization: "Upwork Freelance Platform",
+    imageName: "upwork.png",
+  },
 ];
 
 const WorkSection: React.FC<WorkSectionProps> = () => {
@@ -37,6 +53,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
                   <WorkCard
                     key={index}
                     title={work.title}
+                    organization={work.organization}
                     imageName={work.imageName}
                   />
                 ))}

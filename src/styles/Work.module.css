@@ -67,6 +67,19 @@
 .workExpTitle {
     font-size: 24px;
     color: #ffffff;
+    position: relative;
+    padding-right: 50px;
+    width: fit-content;
+}
+
+.workExpTitle::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 80%;
+    width: 50px;
+    height: 2px;
+    background-color: #ffffff;
 }
 
 .workExpList {
