@@ -6,9 +6,11 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
 import styles from "../../styles/Footer.module.css";
 
-interface FooterProps {}
+interface FooterProps {
+  home: boolean;
+}
 
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC<FooterProps> = ({ home }) => {
   const router = useRouter();
   const [activeLink, setActiveLink] = useState(router.pathname);
 
@@ -17,12 +19,18 @@ const Footer: React.FC<FooterProps> = () => {
   }, [router.pathname]);
 
   return (
-    <div className={styles.footerContainer}>
+    <div
+      className={`${styles.footerContainer} ${!home ? styles.addBgColor : ""}`}
+    >
       <div className={styles.footerContent}>
         <div className={styles.nameLogo}>
           <h3>Mercy Chelangat</h3>
         </div>
-        <div className={styles.navItems}>
+        <div
+          className={`${styles.navItems} ${
+            !home ? styles.brightColorText : ""
+          }`}
+        >
           <Link
             href={"/about"}
             className={`${styles.linkItem} ${
