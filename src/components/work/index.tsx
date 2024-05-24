@@ -1,7 +1,15 @@
 import React from "react";
+import WorkCard from "./WorkCard";
 import styles from "../../styles/Work.module.css";
 
 interface WorkSectionProps {}
+
+const workData = [
+  { title: "Full Stack Developer", imageName: "project1.jpg" },
+  { title: "Full Stack Developer", imageName: "project1.jpg" },
+  { title: "Front End Developer", imageName: "project1.jpg" },
+  { title: "Full Stack Developer", imageName: "project1.jpg" },
+];
 
 const WorkSection: React.FC<WorkSectionProps> = () => {
   return (
@@ -24,7 +32,15 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
             </div>
             <div className={styles.workExpContainer}>
               <h4 className={styles.workExpTitle}>Work Experience</h4>
-              <div className={styles.workExpList}></div>
+              <div className={styles.workExpList}>
+                {workData.map((work, index) => (
+                  <WorkCard
+                    key={index}
+                    title={work.title}
+                    imageName={work.imageName}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

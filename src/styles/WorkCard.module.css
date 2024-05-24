@@ -1,0 +1,34 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 55px;
+    width: 320px;
+    height: 320px;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.cardContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardImage {
+    width: 100%;
+    height: 60%;
+    border-radius: 55px 55px 0px 0px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cardTitle {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 55px 55px;
+}

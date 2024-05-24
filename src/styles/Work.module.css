@@ -58,12 +58,24 @@
 .workExpContainer {
     width: 100%;
     height: auto;
-    padding: 40px 250px;
+    padding: 20px 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .workExpTitle {
     font-size: 24px;
     color: #ffffff;
+}
+
+.workExpList {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 }
 
 .projectsContainer {
