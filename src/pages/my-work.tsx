@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "@/components/common/Layout";
+import WorkSection from "@/components/work";
 
 const MyWorkPage = () => {
   return (
     <Layout>
-      <div>My Work Page</div>
+      <WorkSection />
     </Layout>
   );
 };

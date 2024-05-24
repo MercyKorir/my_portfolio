@@ -1,10 +1,14 @@
 .layoutContainer {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #f08a8a;
   background-image: url("/images/bg.svg");
+}
+
+.homeLayout {
+  height: 100vh;
 }
 
 .mainContainer {
@@ -14,7 +18,7 @@
 }
 
 .navigation {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 0;
   z-index: 100;

@@ -1,0 +1,80 @@
+.workContainer {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+
+.workContent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.introContainer {
+  width: 100%;
+  height: auto;
+  background-image: url("/images/otherbg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.introContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.introHeader {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 200px 0;
+  text-align: center;
+}
+
+.introHeaderContent {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.introHeaderContent h1 {
+  color: rgba(30, 30, 30, 1);
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.introHeaderContent p {
+  font-size: 16px;
+  padding: 0px 50px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.workExpContainer {
+    width: 100%;
+    height: auto;
+    padding: 40px 250px;
+}
+
+.workExpTitle {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.projectsContainer {
+  width: 100%;
+  height: auto;
+}
+
+.projectsContent {
+  min-height: 100vh;
+  background-image: url("/images/otherbg2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
