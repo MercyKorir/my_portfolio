@@ -7,7 +7,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   imageName: string;
-  demoUrl: string;
+  demoUrl?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -19,37 +19,49 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [showThumbnail, setShowThumbnail] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowThumbnail(false);
-    }, 5000);
+    if (demoUrl) {
+      const timer = setTimeout(() => {
+        setShowThumbnail(false);
+      }, 5000);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    }
+  }, [demoUrl]);
 
   return (
     <div className={styles.projectCardContainer}>
       <div className={styles.projectCardContent}>
         <div className={styles.projectImageContainer}>
-          {showThumbnail ? (
+          {demoUrl ? (
+            showThumbnail ? (
+              <Image
+                src={`/images/${imageName}`}
+                alt={title}
+                width={500}
+                height={400}
+                className={styles.projectImage}
+              />
+            ) : (
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                url={demoUrl}
+                playing={true}
+                controls={false}
+                light={false}
+                loop={true}
+                volume={0}
+                muted={true}
+                playsinline={true}
+              />
+            )
+          ) : (
             <Image
               src={`/images/${imageName}`}
               alt={title}
               width={500}
               height={400}
               className={styles.projectImage}
-            />
-          ) : (
-            <ReactPlayer
-              width="100%"
-              height="100%"
-              url={demoUrl}
-              playing={true}
-              controls={false}
-              light={false}
-              loop={true}
-              volume={0}
-              muted={true}
-              playsinline={true}
             />
           )}
         </div>

@@ -31,16 +31,47 @@ const workData = [
 
 const projectData = [
   {
+    title: "Crypto Dashboard",
+    description: "A personal portfolio website.",
+    imageName: "cryptoapp-img.png",
+    demoUrl: "/videos/crypto-dashboard-demo.mp4",
+  },
+  {
     title: "Course Web Application",
     description: "A full stack e-commerce platform.",
     imageName: "courseapp-img.png",
     demoUrl: "/videos/course-app-demo.mp4",
   },
   {
-    title: "Crypto Dashboard",
+    title: "Blog Design Challenge",
+    description: "A full stack e-commerce platform.",
+    imageName: "blog-design-img.png",
+  },
+  {
+    title: "TastyBook",
     description: "A personal portfolio website.",
-    imageName: "cryptoapp-img.png",
-    demoUrl: "/videos/crypto-dashboard-demo.mp4",
+    imageName: "tastybook-img.png",
+    demoUrl: "/videos/tastybook-demo.mp4",
+  },
+  {
+    title: "Bitnine Global Clone",
+    description: "A personal portfolio website.",
+    imageName: "bitnine-img.png",
+  },
+  {
+    title: "MeloMeet",
+    description: "A personal portfolio website.",
+    imageName: "melomeet-img.png",
+  },
+  {
+    title: "ToDo App",
+    description: "A personal portfolio website.",
+    imageName: "todo-img.png",
+  },
+  {
+    title: "Wallpaper Website",
+    description: "A personal portfolio website.",
+    imageName: "wallpaper-web-img.png",
   },
 ];
 
@@ -83,21 +114,25 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
         <div className={styles.projectsContainer}>
           <div className={styles.projectsContent}>
             <h4 className={styles.projectsTitle}>My Projects</h4>
-            <div
-              className={`${styles.projectsList} ${
-                isVisible ? styles.fadeIn : ""
-              }`}
-              ref={containerRef}
-            >
-              {projectData.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  imageName={project.imageName}
-                  demoUrl={project.demoUrl}
-                />
-              ))}
+            <div className={`${styles.projectsList}`} ref={containerRef}>
+              {projectData.map((project, index) =>
+                project.demoUrl ? (
+                  <ProjectCard
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    imageName={project.imageName}
+                    demoUrl={project.demoUrl}
+                  />
+                ) : (
+                  <ProjectCard
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    imageName={project.imageName}
+                  />
+                )
+              )}
             </div>
           </div>
         </div>
