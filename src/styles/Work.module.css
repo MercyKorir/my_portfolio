@@ -44,9 +44,13 @@
 
 .introHeaderContent h1 {
   color: rgba(30, 30, 30, 1);
+  font-style: normal;
+  font-weight: 600;
   font-size: 64px;
   font-weight: 700;
   text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .introHeaderContent p {
@@ -56,50 +60,82 @@
 }
 
 .workExpContainer {
-    width: 100%;
-    height: auto;
-    padding: 20px 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  width: 100%;
+  height: auto;
+  padding: 20px 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .workExpTitle {
-    font-size: 24px;
-    color: #ffffff;
-    position: relative;
-    padding-right: 50px;
-    width: fit-content;
+  font-size: 24px;
+  color: #ffffff;
+  position: relative;
+  padding-right: 50px;
+  width: fit-content;
 }
 
 .workExpTitle::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 80%;
-    width: 50px;
-    height: 2px;
-    background-color: #ffffff;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 80%;
+  width: 50px;
+  height: 2px;
+  background-color: #ffffff;
 }
 
 .workExpList {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
 }
 
 .projectsContainer {
   width: 100%;
   height: auto;
-}
-
-.projectsContent {
-  min-height: 100vh;
+  padding: 100px 250px 20px 250px;
   background-image: url("/images/otherbg2.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.projectsContent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.projectsTitle {
+  font-size: 24px;
+  color: #ffffff;
+  position: relative;
+  padding-right: 50px;
+  width: fit-content;
+}
+
+.projectsTitle::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 80%;
+  width: 50px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.projectsList {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
 }
