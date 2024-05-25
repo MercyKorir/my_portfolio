@@ -8,6 +8,7 @@ interface ProjectCardProps {
   description: string;
   imageName: string;
   demoUrl?: string;
+  clickFunction: () => void;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,6 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   imageName,
   demoUrl,
+  clickFunction,
 }) => {
   const [showThumbnail, setShowThumbnail] = useState(true);
 
@@ -30,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div className={styles.projectCardContainer}>
-      <div className={styles.projectCardContent}>
+      <div className={styles.projectCardContent} onClick={clickFunction}>
         <div className={styles.projectImageContainer}>
           {demoUrl ? (
             showThumbnail ? (

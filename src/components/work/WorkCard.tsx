@@ -7,12 +7,14 @@ interface WorkCardProps {
   title: string;
   organization: string;
   imageName: string;
+  clickFunction: () => void;
 }
 
 const WorkCard: React.FC<WorkCardProps> = ({
   title,
   organization,
   imageName,
+  clickFunction,
 }) => {
   return (
     <div className={styles.cardContainer}>
@@ -29,7 +31,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
         <div className={styles.cardTitle}>
           <h3>{title}</h3>
           <p>{organization}</p>
-          <span onClick={() => console.log("Clicked Me!")}>
+          <span onClick={clickFunction}>
             <ExpandMoreIcon fontSize="inherit" />
           </span>
         </div>

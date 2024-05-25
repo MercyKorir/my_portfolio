@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import WorkCard from "./WorkCard";
 import ProjectCard from "./ProjectCard";
+import ModalCard from "./ModalCard";
 import styles from "../../styles/Work.module.css";
 import userIntersectionObserver from "@/hooks/userIntersectionObserver";
+import { WorkData, ProjectData } from "@/types/types";
 
 interface WorkSectionProps {}
 
-const workData = [
+const workData: WorkData[] = [
   {
     title: "Full Stack Developer",
     organization: "Organic Kitchen Gardens Kenya",
@@ -29,7 +31,7 @@ const workData = [
   },
 ];
 
-const projectData = [
+const projectData: ProjectData[] = [
   {
     title: "Crypto Dashboard",
     description: "A personal portfolio website.",
@@ -77,6 +79,26 @@ const projectData = [
 
 const WorkSection: React.FC<WorkSectionProps> = () => {
   const { isVisible, containerRef } = userIntersectionObserver();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedData, setSelectedData] = useState<
+    WorkData | ProjectData | null
+  >(null);
+
+  const handleShowWorkDetails = (work: WorkData) => {
+    console.log("Clicked Work!");
+    setSelectedData(work);
+    setShowModal(true);
+  };
+
+  const handleShowProjectDetails = (project: ProjectData) => {
+    console.log("Clicked Project!");
+    setSelectedData(project);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className={styles.workContainer}>
@@ -105,6 +127,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
                     title={work.title}
                     organization={work.organization}
                     imageName={work.imageName}
+                    clickFunction={() => handleShowWorkDetails(work)}
                   />
                 ))}
               </div>
@@ -123,6 +146,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
                     description={project.description}
                     imageName={project.imageName}
                     demoUrl={project.demoUrl}
+                    clickFunction={() => handleShowProjectDetails(project)}
                   />
                 ) : (
                   <ProjectCard
@@ -130,6 +154,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
                     title={project.title}
                     description={project.description}
                     imageName={project.imageName}
+                    clickFunction={() => handleShowProjectDetails(project)}
                   />
                 )
               )}
@@ -137,6 +162,9 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
           </div>
         </div>
       </div>
+      {showModal && (
+        <ModalCard selectedData={selectedData} closeFn={handleCloseModal} />
+      )}
     </div>
   );
 };
