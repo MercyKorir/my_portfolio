@@ -1,6 +1,7 @@
 .cardContainer {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   position: fixed;
@@ -20,6 +21,7 @@
   background: #191714;
   border-radius: 8px 8px 0 0;
   position: relative;
+  overflow-y: auto;
 }
 
 .closeBtn {
