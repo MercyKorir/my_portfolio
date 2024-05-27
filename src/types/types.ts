@@ -2,6 +2,9 @@ export interface WorkData {
   title: string;
   organization: string;
   imageName: string;
+  description: string;
+  frontTechnologies: string[];
+  backTechnologies: string[];
 }
 
 export interface ProjectData {

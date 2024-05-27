@@ -1,0 +1,68 @@
+.workDetailsContainer {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.titleContainer {
+  background: rgba(0, 0, 0, 1);
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  height: 200px;
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleContainer h2 {
+  color: #fff;
+  font-size: 58px;
+}
+
+.titleContainer p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 24px;
+}
+
+.imgContainer {
+  background-color: #fff;
+  margin: 40px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgContainer .img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.descriptionTech {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 80px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.descriptionContainer {
+  width: calc(50%);
+}
+
+.descriptionContainer h4, .techContainer h4 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.techContainer {
+  width: calc(50%);
+}
+
+.techContainer ul {
+    list-style-type: none;
+    padding: 0;
+}
