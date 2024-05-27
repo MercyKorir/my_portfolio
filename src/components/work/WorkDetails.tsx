@@ -30,24 +30,44 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
         </div>
         <div className={styles.techContainer}>
           <h4>Technologies</h4>
-          <div className={styles.frontend}>
-            <h5>Frontend Technologies</h5>
-            <ul>
-              {selectedData.frontTechnologies.map((tech, index) => (
-                <li key={index}>{tech}</li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.frontend}>
-            <h5>Backend Technologies</h5>
-            <ul>
-              {selectedData.backTechnologies.map((tech, index) => (
-                <li key={index}>{tech}</li>
-              ))}
-            </ul>
+          <div className={styles.frontendBackend}>
+            <div className={styles.frontend}>
+              <h5>Frontend Technologies</h5>
+              <ul>
+                {selectedData.frontTechnologies.map((tech, index) => (
+                  <li key={index}>{tech}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.frontend}>
+              <h5>Backend Technologies</h5>
+              <ul>
+                {selectedData.backTechnologies.map((tech, index) => (
+                  <li key={index}>{tech}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+      {selectedData.imagesPath && (
+        <div className={styles.imagesContainer}>
+          <h4>Project Images</h4>
+          <div className={styles.imagesItems}>
+            {selectedData.imagesPath.map((img, index) => (
+              <Image
+                key={index}
+                src={`/images/work-images/${img}`}
+                width={500}
+                height={400}
+                alt={selectedData.title}
+                className={styles.imgItem}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+      <div className={styles.modalFooterContainer}></div>
     </div>
   );
 };

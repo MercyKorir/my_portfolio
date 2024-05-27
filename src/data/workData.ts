@@ -9,6 +9,13 @@ const workData: WorkData[] = [
       "In this role, I donned the hat of a digital gardener, nurturing and cultivating the online presence of Organic Kitchen Gardens. With a keen eye for detail and a green thumb for code, I meticulously tended to their website, ensuring it blossomed with functionality and user-friendliness. From implementing client-requested features to optimizing performance and incorporating the latest web development trends, I brought a fresh perspective that allowed their digital garden to thrive.",
     frontTechnologies: ["HTML", "CSS", "JavaScript"],
     backTechnologies: ["PHP", "MySQL"],
+    imagesPath: [
+      "ogk-1.png",
+      "ogk-2.png",
+      "ogk-3.png",
+      "ogk-4.png",
+      "ogk-5.png",
+    ],
   },
   {
     title: "Full Stack Developer",

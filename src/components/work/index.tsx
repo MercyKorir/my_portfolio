@@ -6,7 +6,7 @@ import styles from "../../styles/Work.module.css";
 import userIntersectionObserver from "@/hooks/userIntersectionObserver";
 import { WorkData, ProjectData } from "@/types/types";
 import workData from "@/data/workData";
-import projectData from "@/data/ProjectData";
+import projectData from "@/data/projectData";
 
 interface WorkSectionProps {}
 
