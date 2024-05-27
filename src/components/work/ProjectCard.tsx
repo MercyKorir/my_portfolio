@@ -2,43 +2,38 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import styles from "../../styles/ProjectCard.module.css";
+import { ProjectData } from "@/types/types";
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  imageName: string;
-  demoUrl?: string;
+  project: ProjectData;
   clickFunction: () => void;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
-  title,
-  description,
-  imageName,
-  demoUrl,
+  project,
   clickFunction,
 }) => {
   const [showThumbnail, setShowThumbnail] = useState(true);
 
   useEffect(() => {
-    if (demoUrl) {
+    if (project.demoUrl) {
       const timer = setTimeout(() => {
         setShowThumbnail(false);
       }, 5000);
 
       return () => clearTimeout(timer);
     }
-  }, [demoUrl]);
+  }, [project.demoUrl]);
 
   return (
     <div className={styles.projectCardContainer}>
       <div className={styles.projectCardContent} onClick={clickFunction}>
         <div className={styles.projectImageContainer}>
-          {demoUrl ? (
+          {project.demoUrl ? (
             showThumbnail ? (
               <Image
-                src={`/images/${imageName}`}
-                alt={title}
+                src={`/images/${project.imageName}`}
+                alt={project.title}
                 width={500}
                 height={400}
                 className={styles.projectImage}
@@ -47,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <ReactPlayer
                 width="100%"
                 height="100%"
-                url={demoUrl}
+                url={project.demoUrl}
                 playing={true}
                 controls={false}
                 light={false}
@@ -59,8 +54,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             )
           ) : (
             <Image
-              src={`/images/${imageName}`}
-              alt={title}
+              src={`/images/${project.imageName}`}
+              alt={project.title}
               width={500}
               height={400}
               className={styles.projectImage}
@@ -68,8 +63,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
         <span className={styles.projectTitleContainer}>
-          <h3>{title}</h3>
-          <p>{description}</p>
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
         </span>
       </div>
     </div>

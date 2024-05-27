@@ -85,19 +85,18 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
   >(null);
 
   const handleShowWorkDetails = (work: WorkData) => {
-    console.log("Clicked Work!");
     setSelectedData(work);
     setShowModal(true);
   };
 
   const handleShowProjectDetails = (project: ProjectData) => {
-    console.log("Clicked Project!");
     setSelectedData(project);
     setShowModal(true);
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setSelectedData(null);
   };
 
   return (
@@ -124,9 +123,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
                 {workData.map((work, index) => (
                   <WorkCard
                     key={index}
-                    title={work.title}
-                    organization={work.organization}
-                    imageName={work.imageName}
+                    work={work}
                     clickFunction={() => handleShowWorkDetails(work)}
                   />
                 ))}
@@ -138,26 +135,13 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
           <div className={styles.projectsContent}>
             <h4 className={styles.projectsTitle}>My Projects</h4>
             <div className={`${styles.projectsList}`} ref={containerRef}>
-              {projectData.map((project, index) =>
-                project.demoUrl ? (
-                  <ProjectCard
-                    key={index}
-                    title={project.title}
-                    description={project.description}
-                    imageName={project.imageName}
-                    demoUrl={project.demoUrl}
-                    clickFunction={() => handleShowProjectDetails(project)}
-                  />
-                ) : (
-                  <ProjectCard
-                    key={index}
-                    title={project.title}
-                    description={project.description}
-                    imageName={project.imageName}
-                    clickFunction={() => handleShowProjectDetails(project)}
-                  />
-                )
-              )}
+              {projectData.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  project={project}
+                  clickFunction={() => handleShowProjectDetails(project)}
+                />
+              ))}
             </div>
           </div>
         </div>
