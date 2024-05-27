@@ -50,6 +50,12 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
           </div>
         </div>
       </div>
+      {selectedData.webUrl && (
+        <div className={styles.webUrlContainer}>
+          <h4>Website:</h4>
+          <p>{selectedData.webUrl}</p>
+        </div>
+      )}
       {selectedData.imagesPath && (
         <div className={styles.imagesContainer}>
           <h4>Project Images</h4>

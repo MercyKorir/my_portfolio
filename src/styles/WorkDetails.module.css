@@ -95,8 +95,36 @@
   margin-bottom: 5px;
 }
 
+.webUrlContainer {
+  margin-top: 30px;
+  padding: 0px 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.webUrlContainer h4 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.webUrlContainer p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+}
+
+.webUrlContainer p:hover {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .imagesContainer {
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -107,8 +135,8 @@
 }
 
 .imagesContainer h4 {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 32px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 32px;
 }
 
 .imagesItems {
@@ -128,7 +156,7 @@
 
 .modalFooterContainer {
   width: 100%;
-  height: 100px;
+  height: 150px;
   background: rgba(0, 0, 0, 1);
   display: flex;
   justify-content: center;

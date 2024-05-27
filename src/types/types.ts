@@ -5,6 +5,7 @@ export interface WorkData {
   description: string;
   frontTechnologies: string[];
   backTechnologies: string[];
+  webUrl?: string;
   imagesPath?: string[];
 }
 
