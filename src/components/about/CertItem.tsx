@@ -5,11 +5,16 @@ import styles from "../../styles/CertItem.module.css";
 
 interface CertItemProps {
   cert: CertificationData;
+  isLastItem: boolean;
 }
 
-const CertItem: React.FC<CertItemProps> = ({ cert }) => {
+const CertItem: React.FC<CertItemProps> = ({ cert, isLastItem }) => {
   return (
-    <div className={styles.certItemContainer}>
+    <div
+      className={`${styles.certItemContainer} ${
+        !isLastItem ? styles.borderedBottom : ""
+      }`}
+    >
       <div className={styles.headerImageContainer}>
         <div className={styles.headerContainer}>
           <div className={styles.leftTitle}>

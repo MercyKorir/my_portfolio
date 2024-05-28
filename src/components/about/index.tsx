@@ -91,7 +91,11 @@ const AboutMe: React.FC<AboutMeProps> = () => {
               <h4 className={styles.title}>Certifications</h4>
               <div className={styles.certContent}>
                 {certificateData.map((cert, index) => (
-                  <CertItem key={index} cert={cert} />
+                  <CertItem
+                    key={index}
+                    cert={cert}
+                    isLastItem={index === certificateData.length - 1}
+                  />
                 ))}
               </div>
             </div>

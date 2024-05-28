@@ -6,6 +6,11 @@
   letter-spacing: 1px;
 }
 
+.certItemContainer.borderedBottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 50px;
+}
+
 .headerImageContainer {
   width: calc(50%);
   height: 100%;
