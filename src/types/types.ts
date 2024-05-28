@@ -20,3 +20,20 @@ export interface SkillData {
   title: string;
   imageName: string;
 }
+
+export interface EducationData {
+  title: string;
+  description: string[];
+  imageName: string;
+  links: string[];
+}
+
+export interface CertificationData {
+  title: string;
+  date: string;
+  courseName: string;
+  organization: string;
+  description: string;
+  imageName: string;
+  certificateUrl: string;
+}

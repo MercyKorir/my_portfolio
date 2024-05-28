@@ -4,7 +4,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
 import skillData from "@/data/skillData";
+import educationData from "@/data/educationData";
+import certificateData from "@/data/certificateData";
 import SkillItem from "./SkillItem";
+import CertItem from "./CertItem";
+import EducationItem from "./EducationItem";
 import styles from "../../styles/AboutMe.module.css";
 
 interface AboutMeProps {}
@@ -73,7 +77,26 @@ const AboutMe: React.FC<AboutMeProps> = () => {
             </div>
           </div>
         </div>
-        <div className={styles.educationCertsContainer}></div>
+        <div className={styles.educationCertsContainer}>
+          <div className={styles.educationCertContent}>
+            <div className={styles.educationContainer}>
+              <h4 className={styles.title}>Educational Experiences</h4>
+              <div className={styles.educationContent}>
+                {educationData.map((education, index) => (
+                  <EducationItem key={index} education={education} />
+                ))}
+              </div>
+            </div>
+            <div className={styles.certContainer}>
+              <h4 className={styles.title}>Certifications</h4>
+              <div className={styles.certContent}>
+                {certificateData.map((cert, index) => (
+                  <CertItem key={index} cert={cert} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

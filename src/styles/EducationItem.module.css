@@ -1,0 +1,53 @@
+.educationItemContainer {
+  width: calc(100%);
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  letter-spacing: 1px;
+}
+
+.headerContainer {
+  width: calc(50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.headerContainer h5 {
+  font-size: 24px;
+  color: rgba(240, 138, 138, 0.8);
+  font-weight: 700;
+  padding-left: 80px;
+}
+
+.descriptionContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.descriptionContainer p {
+  width: 80%;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.imageContainer {
+  width: calc(50%);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.educationImage {
+  width: 700px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+}

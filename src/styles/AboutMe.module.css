@@ -146,6 +146,76 @@
   animation: scroll 20s linear infinite;
 }
 
+.educationCertsContainer {
+  width: 100%;
+  height: auto;
+  padding: 100px 200px;
+  background-image: url("/images/otherbg2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.educationCertContent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.educationContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 24px;
+  color: #ffffff;
+  position: relative;
+  padding-right: 50px;
+  width: fit-content;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 80%;
+  width: 50px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.educationContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.certContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.certContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0%);
