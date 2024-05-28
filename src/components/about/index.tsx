@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
+import skillData from "@/data/skillData";
+import SkillItem from "./SkillItem";
 import styles from "../../styles/AboutMe.module.css";
 
 interface AboutMeProps {}
 
 const AboutMe: React.FC<AboutMeProps> = () => {
+  const skillsContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const skillsContentElement = skillsContentRef.current;
+    if (skillsContentElement) {
+      const clone = skillsContentElement.cloneNode(true);
+      skillsContentElement.parentNode?.appendChild(clone);
+    }
+  }, []);
+
   return (
     <div className={styles.aboutMeContainer}>
       <div className={styles.aboutMeContent}>
@@ -52,7 +64,13 @@ const AboutMe: React.FC<AboutMeProps> = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.skillsContainer}></div>
+            <div className={styles.skillsContainer}>
+              <div className={styles.skillsContent} ref={skillsContentRef}>
+                {skillData.map((skill, index) => (
+                  <SkillItem key={index} itemData={skill} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.educationCertsContainer}></div>

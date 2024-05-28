@@ -15,3 +15,8 @@ export interface ProjectData {
   imageName: string;
   demoUrl?: string;
 }
+
+export interface SkillData {
+  title: string;
+  imageName: string;
+}

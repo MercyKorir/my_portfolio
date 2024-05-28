@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  padding: 200px 200px;
+  padding: 200px;
   text-align: center;
 }
 
@@ -39,7 +39,6 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  /* gap: 20px; */
 }
 
 .aboutMeTitleContainer {
@@ -80,6 +79,8 @@
 }
 
 .socialIconsBg {
+  width: 400px;
+  height: 300px;
 }
 
 .socialIconsItems {
@@ -116,4 +117,40 @@
 .socialIconItem3 {
   left: 57%;
   top: 50%;
+}
+
+.skillsContainer {
+  margin: 0 auto;
+  max-width: 80%;
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #fff 50%,
+    #fff 80%,
+    transparent
+  );
+}
+
+.skillsContent {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
