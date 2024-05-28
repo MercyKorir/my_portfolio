@@ -1,10 +1,11 @@
 import React from "react";
+import AboutMe from "@/components/about";
 import Layout from "@/components/common/Layout";
 
 const AboutPage = () => {
   return (
     <Layout>
-      <div>about</div>
+      <AboutMe />
     </Layout>
   );
 };
