@@ -18,6 +18,18 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
     setActiveLink(router.pathname);
   }, [router.pathname]);
 
+  const handleNavigateGithub = () => {
+    window.open("https://github.com/MercyKorir", "_blank");
+  };
+
+  const handleNavigateLinkedIn = () => {
+    window.open("https://www.linkedin.com/in/mercychelangatkorir/", "_blank");
+  };
+
+  const handleNavigateEmail = () => {
+    window.location.href = "mailto:korir.mercy.chelangat@gmail.com";
+  };
+
   return (
     <div
       className={`${styles.footerContainer} ${!home ? styles.addBgColor : ""}`}
@@ -57,13 +69,13 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
           </Link>
         </div>
         <div className={styles.socialLinks}>
-          <span>
+          <span onClick={handleNavigateGithub}>
             <GitHubIcon fontSize="inherit" className={styles.githubIcon} />
           </span>
-          <span>
+          <span onClick={handleNavigateLinkedIn}>
             <LinkedInIcon fontSize="inherit" color="primary" />
           </span>
-          <span>
+          <span onClick={handleNavigateEmail}>
             <MailIcon fontSize="inherit" className={styles.mailIcon} />
           </span>
         </div>

@@ -74,6 +74,7 @@
 
 .socialLinks span {
   font-size: 30px;
+  cursor: pointer;
 }
 
 .githubIcon {
