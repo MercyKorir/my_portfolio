@@ -48,5 +48,6 @@
 }
 
 .projectCardContainer:hover .projectTitleContainer {
+  display: flex;
   opacity: 1;
 }
