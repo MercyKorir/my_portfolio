@@ -3,7 +3,11 @@ import { useRouter } from "next/router";
 import { routes } from "../../utils/navigationRoutes";
 import styles from "../../styles/NavigationButtons.module.css";
 
-const NavigationButtons: React.FC = () => {
+interface NavigationButtonsProps {
+  home: boolean;
+}
+
+const NavigationButtons: React.FC<NavigationButtonsProps> = ({ home }) => {
   const router = useRouter();
   const currentPath = router.pathname;
 
@@ -20,7 +24,11 @@ const NavigationButtons: React.FC = () => {
   };
 
   return (
-    <div className={styles.navBtnContainer}>
+    <div
+      className={`${styles.navBtnContainer} ${
+        !home ? styles.widthAdjust : ""
+      }`}
+    >
       <span className={`${styles.buttonOuterLayer} ${styles.outerLayerPrev}`}>
         <button onClick={() => handleNavigation(prevRoute.path)}></button>
       </span>

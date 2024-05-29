@@ -20,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     >
       <main className={styles.mainContainer}>
         <span className={styles.navigation}>
-          <NavigationButtons />
+          <NavigationButtons home={isHomePage} />
         </span>
         {children}
       </main>

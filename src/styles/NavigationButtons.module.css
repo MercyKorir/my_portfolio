@@ -2,9 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 20px);
+  width: calc(100%);
   height: 200px;
   position: relative;
+}
+
+.widthAdjust {
+  width: calc(100% - 20px);
 }
 
 .outerLayerPrev {
