@@ -34,14 +34,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <Image
                 src={`/images/${project.imageName}`}
                 alt={project.title}
-                width={500}
+                width={700}
                 height={400}
                 className={styles.projectImage}
               />
             ) : (
               <ReactPlayer
-                width="100%"
-                height="100%"
+                width="700px"
+                height="400px"
                 url={project.demoUrl}
                 playing={true}
                 controls={false}
@@ -56,7 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <Image
               src={`/images/${project.imageName}`}
               alt={project.title}
-              width={500}
+              width={700}
               height={400}
               className={styles.projectImage}
             />
