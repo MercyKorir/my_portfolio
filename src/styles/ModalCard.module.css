@@ -24,6 +24,22 @@
   overflow-y: auto;
 }
 
+.cardComponent::-webkit-scrollbar {
+  background: #000;
+}
+
+.cardComponent::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.cardComponent::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cardComponent::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .closeBtn {
   width: 50px;
   height: 50px;
