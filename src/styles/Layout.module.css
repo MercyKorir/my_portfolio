@@ -5,6 +5,9 @@
   flex-direction: column;
   background-color: #f08a8a;
   background-image: url("/images/bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .homeLayout {
