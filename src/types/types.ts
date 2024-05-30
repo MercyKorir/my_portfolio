@@ -14,6 +14,10 @@ export interface ProjectData {
   description: string;
   imageName: string;
   demoUrl?: string;
+  problem?: string;
+  solution?: string;
+  webUrl?: string;
+  imagesPath?: string[];
 }
 
 export interface SkillData {
