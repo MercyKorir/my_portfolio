@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { routes } from "../../utils/navigationRoutes";
 import styles from "../../styles/NavigationButtons.module.css";
@@ -10,6 +10,7 @@ interface NavigationButtonsProps {
 const NavigationButtons: React.FC<NavigationButtonsProps> = ({ home }) => {
   const router = useRouter();
   const currentPath = router.pathname;
+  const [isHome, setIsHome] = useState(home);
 
   const currentRouteIndex = routes.findIndex(
     (route) => route.path === currentPath
@@ -23,10 +24,18 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({ home }) => {
     router.push(path);
   };
 
+  useEffect(() => {
+    const width = typeof window !== "undefined" ? window.innerWidth : 0;
+
+    if (width < 1024) {
+      setIsHome(true);
+    }
+  }, []);
+
   return (
     <div
       className={`${styles.navBtnContainer} ${
-        !home ? styles.widthAdjust : ""
+        !isHome ? styles.widthAdjust : ""
       }`}
     >
       <span className={`${styles.buttonOuterLayer} ${styles.outerLayerPrev}`}>

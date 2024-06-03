@@ -5,6 +5,8 @@
   border-radius: 55px;
   width: 320px;
   height: 320px;
+  min-width: 280px;
+  min-height: 280px;
   background-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -69,4 +71,28 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+/* Media Queries */
+@media (min-width: 376px) {
+}
+@media (min-width: 426px) {
+}
+@media (min-width: 601px) {
+}
+@media (min-width: 769px) {
+  .cardContainer {
+    width: 320px;
+    height: 320px;
+    min-width: 320px;
+    min-height: 320px;
+  }
+}
+@media (min-width: 1025px) {
+}
+@media (min-width: 1281px) {
+}
+@media (min-width: 1441px) {
+}
+@media (min-width: 1921px) {
 }

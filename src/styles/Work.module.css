@@ -31,22 +31,22 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  padding: 200px 0;
+  padding: 200px 0 50px 0;
   text-align: center;
 }
 
 .introHeaderContent {
-  width: 800px;
+  width: 310px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .introHeaderContent h1 {
   color: rgba(30, 30, 30, 1);
   font-style: normal;
   font-weight: 600;
-  font-size: 64px;
+  font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -54,25 +54,25 @@
 }
 
 .introHeaderContent p {
-  font-size: 16px;
-  padding: 0px 50px;
+  font-size: 14px;
+  padding: 0px 10px;
   color: rgba(255, 255, 255, 0.4);
 }
 
 .workExpContainer {
   width: 100%;
   height: auto;
-  padding: 20px 250px;
+  padding: 50px 20px 0px 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 .workExpTitle {
-  font-size: 24px;
+  font-size: 18px;
   color: #ffffff;
   position: relative;
-  padding-right: 50px;
+  padding-right: 30px;
   width: fit-content;
 }
 
@@ -81,18 +81,21 @@
   position: absolute;
   right: 0;
   top: 80%;
-  width: 50px;
+  width: 30px;
   height: 2px;
   background-color: #ffffff;
 }
 
 .workExpList {
+  overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+  padding: 0 0px 5px 0px;
 }
 
 .projectsContainer {
@@ -166,3 +169,60 @@
     opacity: 0;
   }
 } */
+
+/* Media Queries */
+@media (min-width: 376px) {
+}
+@media (min-width: 426px) {
+}
+@media (min-width: 601px) {
+}
+
+@media (min-width: 769px) {
+  .introHeader {
+    padding: 200px 0;
+  }
+
+  .introHeaderContent {
+    width: 800px;
+    gap: 20px;
+  }
+
+  .introHeaderContent h1 {
+    font-size: 64px;
+  }
+
+  .introHeaderContent p {
+    font-size: 16px;
+    padding: 0px 50px;
+  }
+
+  .workExpContainer {
+    padding: 20px 250px;
+    gap: 30px;
+  }
+
+  .workExpTitle {
+    font-size: 24px;
+    padding-right: 50px;
+  }
+
+  .workExpTitle::before {
+    width: 50px;
+  }
+
+  .workExpList {
+    overflow-x: hidden;
+    gap: 30px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+}
+@media (min-width: 1281px) {
+}
+@media (min-width: 1441px) {
+}
+@media (min-width: 1921px) {
+}
