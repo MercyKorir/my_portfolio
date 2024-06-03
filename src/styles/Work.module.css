@@ -101,7 +101,7 @@
 .projectsContainer {
   width: 100%;
   height: auto;
-  padding: 100px 250px 20px 250px;
+  padding: 100px 0px 50px 10px;
   background-image: url("/images/otherbg2.svg");
   background-size: cover;
   background-position: center;
@@ -118,14 +118,14 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 .projectsTitle {
-  font-size: 24px;
+  font-size: 18px;
   color: #ffffff;
   position: relative;
-  padding-right: 50px;
+  padding-right: 30px;
   width: fit-content;
 }
 
@@ -134,7 +134,7 @@
   position: absolute;
   right: 0;
   top: 80%;
-  width: 50px;
+  width: 30px;
   height: 2px;
   background-color: #ffffff;
 }
@@ -145,7 +145,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
 }
 
 @keyframes fadeInAnimation {
@@ -215,6 +215,27 @@
     overflow-x: hidden;
     gap: 30px;
     padding: 0;
+  }
+
+  .projectsContainer {
+    padding: 100px 250px 20px 250px;
+  }
+
+  .projectsContent {
+    gap: 30px;
+  }
+
+  .projectsTitle {
+    font-size: 24px;
+    padding-right: 50px;
+  }
+
+  .projectsTitle::before {
+    width: 50px;
+  }
+
+  .projectsList {
+    gap: 30px;
   }
 }
 

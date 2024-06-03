@@ -1,12 +1,12 @@
 .projectCardContainer {
-  width: calc(50% - 15px);
+  width: calc(100% - 15px);
   position: relative;
   cursor: pointer;
 }
 
 .projectCardContent {
-  width: 700px;
-  height: 400px;
+  width: 300px;
+  height: auto;
 }
 
 .projectImageContainer {
@@ -15,19 +15,30 @@
 }
 
 .projectImage {
-  width: 700px;
-  height: 400px;
+  width: 300px;
+  height: 170px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.reactPlayerWrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .projectTitleContainer {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 700px;
-  height: 200px;
+  width: 300px;
+  height: 80px;
   z-index: 100;
   background: linear-gradient(
     to bottom,
@@ -50,4 +61,42 @@
 .projectCardContainer:hover .projectTitleContainer {
   display: flex;
   opacity: 1;
+}
+
+/* Media Queries */
+@media (min-width: 376px) {
+}
+@media (min-width: 426px) {
+}
+@media (min-width: 601px) {
+}
+
+@media (min-width: 769px) {
+  .projectCardContainer {
+    width: calc(50% - 15px);
+  }
+
+  .projectCardContent {
+    width: 700px;
+    height: 400px;
+  }
+
+  .projectImage {
+    width: 700px;
+    height: 400px;
+  }
+
+  .projectTitleContainer {
+    width: 700px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 1025px) {
+}
+@media (min-width: 1281px) {
+}
+@media (min-width: 1441px) {
+}
+@media (min-width: 1921px) {
 }

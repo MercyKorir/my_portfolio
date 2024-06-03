@@ -39,18 +39,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 className={styles.projectImage}
               />
             ) : (
-              <ReactPlayer
-                width="700px"
-                height="400px"
-                url={project.demoUrl}
-                playing={true}
-                controls={false}
-                light={false}
-                loop={true}
-                volume={0}
-                muted={true}
-                playsinline={true}
-              />
+              <div className={styles.reactPlayerWrapper}>
+                <ReactPlayer
+                  className={styles.reactPlayer}
+                  width="100%"
+                  height="100%"
+                  url={project.demoUrl}
+                  playing={true}
+                  controls={false}
+                  light={false}
+                  loop={true}
+                  volume={0}
+                  muted={true}
+                  playsinline={true}
+                />
+              </div>
             )
           ) : (
             <Image
