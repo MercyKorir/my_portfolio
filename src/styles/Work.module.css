@@ -101,7 +101,7 @@
 .projectsContainer {
   width: 100%;
   height: auto;
-  padding: 100px 0px 50px 10px;
+  padding: 100px 10px 50px 10px;
   background-image: url("/images/otherbg2.svg");
   background-size: cover;
   background-position: center;
@@ -172,9 +172,17 @@
 
 /* Media Queries */
 @media (min-width: 376px) {
+  .projectsContent {
+    gap: 20px;
+  }
 }
+
 @media (min-width: 426px) {
+  .projectsContainer {
+    padding: 100px 20px 50px 20px;
+  }
 }
+
 @media (min-width: 601px) {
 }
 
