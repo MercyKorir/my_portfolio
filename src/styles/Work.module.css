@@ -31,12 +31,13 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  padding: 200px 0 50px 0;
+  padding: 100px 0 0 0;
   text-align: center;
 }
 
 .introHeaderContent {
-  width: 310px;
+  padding: 0 20px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -101,7 +102,7 @@
 .projectsContainer {
   width: 100%;
   height: auto;
-  padding: 100px 10px 50px 10px;
+  padding: 50px 10px 50px 10px;
   background-image: url("/images/otherbg2.svg");
   background-size: cover;
   background-position: center;
@@ -192,7 +193,8 @@
   }
 
   .introHeaderContent {
-    width: 800px;
+    /* width: 800px; */
+    padding: 0 20px;
     gap: 20px;
   }
 

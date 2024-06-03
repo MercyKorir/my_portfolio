@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 55px;
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   min-width: 280px;
   min-height: 280px;
   background-color: rgba(255, 255, 255, 0.06);
@@ -39,20 +39,20 @@
   height: 40%;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding-top: 20px;
+  gap: 2px;
+  padding-top: 10px;
   align-items: center;
   border-radius: 0px 0px 55px 55px;
 }
 
 .cardTitle h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: #f08a8a;
 }
 
 .cardTitle p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -86,6 +86,19 @@
     height: 320px;
     min-width: 320px;
     min-height: 320px;
+  }
+
+  .cardTitle {
+    gap: 3px;
+    padding-top: 20px;
+  }
+
+  .cardTitle h3 {
+    font-size: 24px;
+  }
+
+  .cardTitle p {
+    font-size: 16px;
   }
 }
 @media (min-width: 1025px) {
