@@ -6,8 +6,8 @@
   background: rgba(0, 0, 0, 1);
   width: 100%;
   border-radius: 8px 8px 0 0;
-  height: 200px;
-  padding-left: 80px;
+  height: 150px;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,17 +15,17 @@
 
 .titleContainer h2 {
   color: #fff;
-  font-size: 58px;
+  font-size: 34px;
 }
 
 .titleContainer p {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .imageVideoContainer {
   background-color: #fff;
-  margin: 40px 80px;
+  margin: 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,39 +43,43 @@
 .problemSolutionContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 0px 80px;
+  padding: 0px 20px;
   color: rgba(255, 255, 255, 0.4);
   letter-spacing: 1px;
 }
 
 .problemContainer {
-  width: calc(50%);
-  padding: 10px 0px;
+  width: calc(55%);
+  padding: 0px;
 }
 
 .problemContainer h4,
 .solutionContainer h4 {
   color: #fff;
-  font-size: 24px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
 .problemContainer p {
-  width: 85%;
-  font-size: 16px;
+  width: 95%;
+  font-size: 14px;
 }
 
 .solutionContainer {
-  width: calc(50%);
+  width: calc(45%);
   display: flex;
   flex-direction: column;
-  padding: 10px 0px 10px 20px;
+  padding: 0px 0px 0px 10px;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.solutionContainer p {
+  font-size: 14px;
 }
 
 .webUrlContainer {
   margin-top: 30px;
-  padding: 0px 80px;
+  padding: 0px 20px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -86,13 +90,13 @@
 
 .webUrlContainer h4 {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 
 .webUrlContainer p {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .webUrlContainer p:hover {
@@ -109,12 +113,12 @@
   gap: 20px;
   width: 100%;
   height: auto;
-  padding: 0px 80px;
+  padding: 0px 20px;
 }
 
 .imagesContainer h4 {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 32px;
+  font-size: 26px;
 }
 
 .imagesItems {
@@ -127,6 +131,7 @@
 .imagesItems .imgItem {
   width: auto;
   height: auto;
+  max-width: 280px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -140,4 +145,92 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+}
+
+/* Media Queries */
+@media (min-width: 376px) {
+}
+@media (min-width: 426px) {
+}
+@media (min-width: 601px) {
+}
+
+@media (min-width: 769px) {
+  .titleContainer {
+    height: 200px;
+    padding-left: 80px;
+  }
+
+  .titleContainer h2 {
+    font-size: 58px;
+  }
+
+  .titleContainer p {
+    font-size: 24px;
+  }
+
+  .imageVideoContainer {
+    margin: 40px 80px;
+  }
+
+  .problemSolutionContainer {
+    padding: 0px 80px;
+  }
+
+  .problemContainer {
+    width: calc(50%);
+    padding: 10px 0px;
+  }
+
+  .problemContainer h4,
+  .solutionContainer h4 {
+    font-size: 24px;
+  }
+
+  .problemContainer p {
+    width: 85%;
+    font-size: 16px;
+  }
+
+  .solutionContainer {
+    width: calc(50%);
+    padding: 10px 0px 10px 20px;
+  }
+
+  .solutionContainer p {
+    font-size: 16px;
+  }
+
+  .webUrlContainer {
+    padding: 0px 80px;
+  }
+
+  .webUrlContainer h4 {
+    font-size: 18px;
+  }
+
+  .webUrlContainer p {
+    font-size: 16px;
+  }
+
+  .imagesContainer {
+    padding: 0px 80px;
+  }
+
+  .imagesContainer h4 {
+    font-size: 32px;
+  }
+
+  .imagesItems .imgItem {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1025px) {
+}
+@media (min-width: 1281px) {
+}
+@media (min-width: 1441px) {
+}
+@media (min-width: 1921px) {
 }
