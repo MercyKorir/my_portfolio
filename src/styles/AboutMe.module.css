@@ -31,18 +31,19 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  padding: 200px;
+  padding: 100px 0 0 0;
   text-align: center;
 }
 
 .aboutMeHeaderContent {
+  padding: 0 20px 150px 20px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .aboutMeTitleContainer {
-  width: calc(50%);
+  width: calc(100%);
 }
 
 .aboutMeTitleContent {
@@ -52,7 +53,7 @@
 }
 
 .aboutMeTitleContent h1 {
-  font-size: 64px;
+  font-size: 40px;
   font-weight: 700;
   text-align: left;
   color: #fff;
@@ -62,13 +63,14 @@
 
 .aboutMeTitleContent p {
   text-align: left;
-  width: 80%;
-  font-size: 16px;
+  width: 100%;
+  font-size: 14px;
   color: rgba(30, 30, 30, 0.6);
 }
 
 .aboutMeAnimationContainer {
   width: calc(50%);
+  display: none;
 }
 
 .aboutMeAnimationContent {
@@ -149,7 +151,7 @@
 .educationCertsContainer {
   width: 100%;
   height: auto;
-  padding: 100px 200px;
+  padding: 50px 10px 50px 10px;
   background-image: url("/images/otherbg2.svg");
   background-size: cover;
   background-position: center;
@@ -161,7 +163,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 60px;
 }
 
 .educationContainer {
@@ -169,14 +171,14 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 18px;
   color: #ffffff;
   position: relative;
-  padding-right: 50px;
+  padding-right: 30px;
   width: fit-content;
 }
 
@@ -185,7 +187,7 @@
   position: absolute;
   right: 0;
   top: 80%;
-  width: 50px;
+  width: 30px;
   height: 2px;
   background-color: #ffffff;
 }
@@ -204,7 +206,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .certContent {
@@ -213,7 +215,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 @keyframes scroll {
@@ -223,4 +225,80 @@
   100% {
     transform: translateX(-100%);
   }
+}
+
+/* Media Queries */
+@media (min-width: 376px) {
+}
+@media (min-width: 426px) {
+}
+@media (min-width: 601px) {
+}
+
+@media (min-width: 769px) {
+  .aboutMeHeader {
+    padding: 200px;
+  }
+
+  .aboutMeHeaderContent {
+    padding: 0px;
+  }
+
+  .aboutMeTitleContainer {
+    width: calc(50%);
+  }
+
+  .aboutMeTitleContent h1 {
+    font-size: 64px;
+  }
+
+  .aboutMeTitleContent p {
+    text-align: left;
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .aboutMeAnimationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .educationCertsContainer {
+    padding: 100px 200px;
+  }
+
+  .educationCertContent {
+    gap: 30px;
+  }
+
+  .educationContainer {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    padding-right: 50px;
+  }
+
+  .title::before {
+    width: 50px;
+  } 
+
+  .certContainer {
+    gap: 20px;
+  }
+
+  .certContent {
+    gap: 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+}
+@media (min-width: 1281px) {
+}
+@media (min-width: 1441px) {
+}
+@media (min-width: 1921px) {
 }
