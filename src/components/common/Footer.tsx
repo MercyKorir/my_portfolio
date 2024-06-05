@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import styles from "../../styles/Footer.module.css";
 
 interface FooterProps {
@@ -13,6 +15,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ home }) => {
   const router = useRouter();
   const [activeLink, setActiveLink] = useState(router.pathname);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setActiveLink(router.pathname);
@@ -30,11 +33,23 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
     window.location.href = "mailto:korir.mercy.chelangat@gmail.com";
   };
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div
-      className={`${styles.footerContainer} ${!home ? styles.addBgColor : ""}`}
+      className={`${styles.footerContainer} ${!home ? styles.addBgColor : ""} ${
+        isOpen ? styles.openMenu : ""
+      }`}
     >
+      <div className={styles.hamburgerMenu} onClick={toggleMenu}>
+        <MenuIcon fontSize="inherit" />
+      </div>
       <div className={styles.footerContent}>
+        <div className={styles.closeIcon} onClick={toggleMenu}>
+          <CloseIcon fontSize="inherit" />
+        </div>
         <div className={styles.nameLogo}>
           <h3>Mercy Chelangat</h3>
         </div>
