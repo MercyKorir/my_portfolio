@@ -1,9 +1,13 @@
 .hamburgerMenu {
   display: block;
   font-size: 30px;
-  color: #f08a8a;
   cursor: pointer;
+  color: rgba(25, 22, 21, 0.6);
   z-index: 102;
+}
+
+.hamburgerMenuHomeColor {
+  color: #f08a8a;
 }
 
 .footerContainer {

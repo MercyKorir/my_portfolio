@@ -43,7 +43,7 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
         isOpen ? styles.openMenu : ""
       }`}
     >
-      <div className={styles.hamburgerMenu} onClick={toggleMenu}>
+      <div className={`${styles.hamburgerMenu} ${activeLink === "/" ? styles.hamburgerMenuHomeColor : ""}`} onClick={toggleMenu}>
         <MenuIcon fontSize="inherit" />
       </div>
       <div className={styles.footerContent}>
