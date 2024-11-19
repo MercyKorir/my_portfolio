@@ -42,7 +42,7 @@ const projectData: ProjectData[] = [
     title: "TastyBook",
     description: "A personal portfolio website.",
     imageName: "tastybook-img.png",
-    demoUrl: "/videos/tastybook-demo.mp4",
+    // demoUrl: "/videos/tastybook-demo.mp4", // Not able to upload will use google drive in future
   },
   {
     title: "Bitnine Global Clone",
