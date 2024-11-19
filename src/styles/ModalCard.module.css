@@ -10,7 +10,7 @@
   z-index: 1001;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .cardComponent {
