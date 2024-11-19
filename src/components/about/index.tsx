@@ -24,6 +24,18 @@ const AboutMe: React.FC<AboutMeProps> = () => {
     }
   }, []);
 
+  const handleNavigateGithub = () => {
+    window.open("https://github.com/MercyKorir", "_blank");
+  };
+
+  const handleNavigateLinkedIn = () => {
+    window.open("https://www.linkedin.com/in/mercychelangatkorir/", "_blank");
+  };
+
+  const handleNavigateEmail = () => {
+    window.location.href = "mailto:korir.mercy.chelangat@gmail.com";
+  };
+
   return (
     <div className={styles.aboutMeContainer}>
       <div className={styles.aboutMeContent}>
@@ -54,13 +66,22 @@ const AboutMe: React.FC<AboutMeProps> = () => {
                       className={styles.socialIconsBg}
                     />
                     <div className={styles.socialIconsItems}>
-                      <span className={styles.socialIconItem1}>
+                      <span
+                        className={styles.socialIconItem1}
+                        onClick={handleNavigateGithub}
+                      >
                         <GitHubIcon fontSize="inherit" />
                       </span>
-                      <span className={styles.socialIconItem2}>
+                      <span
+                        className={styles.socialIconItem2}
+                        onClick={handleNavigateLinkedIn}
+                      >
                         <LinkedInIcon fontSize="inherit" />
                       </span>
-                      <span className={styles.socialIconItem3}>
+                      <span
+                        className={styles.socialIconItem3}
+                        onClick={handleNavigateEmail}
+                      >
                         <MailIcon fontSize="inherit" />
                       </span>
                     </div>

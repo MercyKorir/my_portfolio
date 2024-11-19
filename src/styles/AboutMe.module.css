@@ -70,7 +70,10 @@
 
 .aboutMeAnimationContainer {
   width: calc(50%);
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .aboutMeAnimationContent {
@@ -81,13 +84,17 @@
 }
 
 .socialIconsBg {
+  position: absolute;
   width: 400px;
   height: 300px;
 }
 
 .socialIconsItems {
   z-index: 100;
-  background-color: antiquewhite;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-origin: center;
 }
 
 .socialIconItem1,
@@ -104,21 +111,32 @@
   border-radius: 50%;
   padding: 30px;
   box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.socialIconItem1:hover,
+.socialIconItem2:hover,
+.socialIconItem3:hover {
+  box-shadow: none;
 }
 
 .socialIconItem1 {
+  top: 0;
   left: 50%;
-  top: 30%;
+  transform: translate(-50%, 0);
 }
 
 .socialIconItem2 {
-  left: 43%;
   top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
 }
 
 .socialIconItem3 {
-  left: 57%;
   top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
 }
 
 .skillsContainer {
