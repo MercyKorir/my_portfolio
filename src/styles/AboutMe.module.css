@@ -36,10 +36,11 @@
 }
 
 .aboutMeHeaderContent {
-  padding: 0 20px 200px 20px;
+  padding: 0 20px 90px 20px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .aboutMeTitleContainer {
@@ -69,11 +70,10 @@
 }
 
 .aboutMeAnimationContainer {
-  width: calc(50%);
+  width: calc(100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .aboutMeAnimationContent {
@@ -85,14 +85,14 @@
 
 .socialIconsBg {
   position: absolute;
-  width: 400px;
+  width: 300px;
   height: 300px;
 }
 
 .socialIconsItems {
-  z-index: 100;
-  width: 200px;
-  height: 200px;
+  z-index: 2;
+  width: 180px;
+  height: 180px;
   position: relative;
   transform-origin: center;
 }
@@ -101,9 +101,9 @@
 .socialIconItem2,
 .socialIconItem3 {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
   background: #d9d9d9;
   display: flex;
   justify-content: center;
@@ -251,15 +251,42 @@
 @media (min-width: 426px) {
 }
 @media (min-width: 601px) {
+  .aboutMeHeaderContent {
+    padding: 0 20px 120px 20px;
+    gap: 60px;
+  }
+
+  .socialIconsBg {
+    width: 350px;
+    height: 300px;
+  }
+
+  .socialIconsItems {
+    width: 200px;
+    height: 200px;
+  }
+
+  .socialIconItem1,
+  .socialIconItem2,
+  .socialIconItem3 {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+  }
 }
 
 @media (min-width: 769px) {
+  
+}
+
+@media (min-width: 1025px) {
   .aboutMeHeader {
     padding: 200px;
   }
 
   .aboutMeHeaderContent {
     padding: 0px;
+    gap: 0px;
   }
 
   .aboutMeTitleContainer {
@@ -277,9 +304,25 @@
   }
 
   .aboutMeAnimationContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: calc(50%);
+  }
+
+  .socialIconsBg {
+    width: 400px;
+    height: 300px;
+  }
+
+  .socialIconsItems {
+    width: 200px;
+    height: 200px;
+  }
+
+  .socialIconItem1,
+  .socialIconItem2,
+  .socialIconItem3 {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
   }
 
   .educationCertsContainer {
@@ -301,7 +344,7 @@
 
   .title::before {
     width: 50px;
-  } 
+  }
 
   .certContainer {
     gap: 20px;
@@ -310,9 +353,6 @@
   .certContent {
     gap: 50px;
   }
-}
-
-@media (min-width: 1025px) {
 }
 @media (min-width: 1281px) {
 }

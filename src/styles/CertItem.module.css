@@ -88,6 +88,10 @@
 }
 
 @media (min-width: 769px) {
+  
+}
+
+@media (min-width: 1025px) {
   .certItemContainer.borderedBottom {
     padding-bottom: 50px;
   }
@@ -125,9 +129,6 @@
     font-size: 16px;
     width: 80%;
   }
-}
-
-@media (min-width: 1025px) {
 }
 @media (min-width: 1281px) {
 }
