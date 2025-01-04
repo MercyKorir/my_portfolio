@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {project.demoUrl ? (
             showThumbnail ? (
               <Image
-                src={`/images/${project.imageName}`}
+                src={`/my-portfolio/images/${project.imageName}`}
                 alt={project.title}
                 width={700}
                 height={400}
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             )
           ) : (
             <Image
-              src={`/images/${project.imageName}`}
+              src={`/my-portfolio/images/${project.imageName}`}
               alt={project.title}
               width={700}
               height={400}
