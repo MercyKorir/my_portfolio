@@ -98,11 +98,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .socialLinks span {
-  font-size: 20px;
+  font-size: 35px;
   cursor: pointer;
 }
 
