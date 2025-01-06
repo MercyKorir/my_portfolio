@@ -16,9 +16,25 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
   const router = useRouter();
   const [activeLink, setActiveLink] = useState(router.pathname);
   const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     setActiveLink(router.pathname);
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const threshold = window.innerHeight * 0.6;
+      setHasScrolled(scrollPosition > threshold);
+    };
+
+    if (!home) {
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [router.pathname]);
 
   const handleNavigateGithub = () => {
@@ -37,13 +53,21 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
     setIsOpen(!isOpen);
   };
 
+  const getMenuClass = () => {
+    if (home || (!home && hasScrolled)) {
+      return styles.hamburgerMenuHomeColor;
+    }
+
+    return "";
+  };
+
   return (
     <div
       className={`${styles.footerContainer} ${!home ? styles.addBgColor : ""} ${
         isOpen ? styles.openMenu : ""
       }`}
     >
-      <div className={`${styles.hamburgerMenu} ${activeLink === "/" ? styles.hamburgerMenuHomeColor : ""}`} onClick={toggleMenu}>
+      <div className={`${styles.hamburgerMenu} ${getMenuClass()}`} onClick={toggleMenu}>
         <MenuIcon fontSize="inherit" />
       </div>
       <div className={styles.footerContent}>
