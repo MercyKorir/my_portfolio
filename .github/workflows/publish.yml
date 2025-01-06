@@ -24,6 +24,9 @@ jobs:
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
 
+      - name: Clear GitHub Pages cache
+        run: rm -rf ./out/.cache
+
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
         with:
