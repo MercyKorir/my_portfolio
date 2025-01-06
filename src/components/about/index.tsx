@@ -15,6 +15,7 @@ interface AboutMeProps {}
 
 const AboutMe: React.FC<AboutMeProps> = () => {
   const skillsContentRef = useRef<HTMLDivElement>(null);
+  const basePath = process.env.BASE_PATH || '';
 
   useEffect(() => {
     const skillsContentElement = skillsContentRef.current;
@@ -39,7 +40,12 @@ const AboutMe: React.FC<AboutMeProps> = () => {
   return (
     <div className={styles.aboutMeContainer}>
       <div className={styles.aboutMeContent}>
-        <div className={styles.aboutMeIntroContainer}>
+        <div
+          className={styles.aboutMeIntroContainer}
+          style={{
+            backgroundImage: `url('${basePath}/images/otherbg.svg')`
+          }}
+        >
           <div className={styles.aboutMeIntroContent}>
             <div className={styles.aboutMeHeader}>
               <div className={styles.aboutMeHeaderContent}>
@@ -62,7 +68,7 @@ const AboutMe: React.FC<AboutMeProps> = () => {
                       height={300}
                       width={400}
                       alt="Social Background"
-                      src={"/my_portfolio/images/social-icons-bg.svg"}
+                      src={`${basePath}/images/social-icons-bg.svg`}
                       className={styles.socialIconsBg}
                     />
                     <div className={styles.socialIconsItems}>
@@ -98,7 +104,12 @@ const AboutMe: React.FC<AboutMeProps> = () => {
             </div>
           </div>
         </div>
-        <div className={styles.educationCertsContainer}>
+        <div
+          className={styles.educationCertsContainer}
+          style={{
+            backgroundImage: `url('${basePath}/images/otherbg2.svg')`
+          }}
+        >
           <div className={styles.educationCertContent}>
             <div className={styles.educationContainer}>
               <h4 className={styles.title}>Educational Experiences</h4>

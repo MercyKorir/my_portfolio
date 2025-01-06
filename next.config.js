@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  env: {
+    BASE_PATH: isProd ? '/my_portfolio' : '',
+  },
 };
 
 module.exports = nextConfig;

@@ -13,12 +13,13 @@ const WorkCard: React.FC<WorkCardProps> = ({
   work,
   clickFunction,
 }) => {
+  const basePath = process.env.BASE_PATH || '';
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardContent}>
         <div className={styles.cardImageContainer}>
           <Image
-            src={`/my_portfolio/images/${work.imageName}`}
+            src={`${basePath}/images/${work.imageName}`}
             alt={work.title}
             width={320}
             height={200}

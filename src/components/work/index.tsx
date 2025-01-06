@@ -16,6 +16,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
   const [selectedData, setSelectedData] = useState<
     WorkData | ProjectData | null
   >(null);
+  const basePath = process.env.BASE_PATH || '';
 
   const handleShowWorkDetails = (work: WorkData) => {
     setSelectedData(work);
@@ -35,7 +36,12 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
   return (
     <div className={styles.workContainer}>
       <div className={styles.workContent}>
-        <div className={styles.introContainer}>
+        <div
+          className={styles.introContainer}
+          style={{
+            backgroundImage: `url('${basePath}/images/otherbg.svg')`
+          }}
+        >
           <div className={styles.introContent}>
             <div className={styles.introHeader}>
               <div className={styles.introHeaderContent}>
@@ -64,7 +70,12 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
             </div>
           </div>
         </div>
-        <div className={styles.projectsContainer}>
+        <div
+          className={styles.projectsContainer}
+          style={{
+            backgroundImage: `url('${basePath}/images/otherbg2.svg')`
+          }}
+        >
           <div className={styles.projectsContent}>
             <h4 className={styles.projectsTitle}>My Projects</h4>
             <div className={`${styles.projectsList}`} ref={containerRef}>

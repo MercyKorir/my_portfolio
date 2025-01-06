@@ -8,13 +8,15 @@ interface SkillItemProps {
 }
 
 const SkillItem: React.FC<SkillItemProps> = ({ itemData }) => {
+  const basePath = process.env.BASE_PATH || '';
+
   return (
     <div className={styles.skillItemContainer}>
       <div className={styles.imageContainer}>
         <Image
           width={150}
           height={100}
-          src={`/my_portfolio/images/skill-icons/${itemData.imageName}`}
+          src={`${basePath}/images/skill-icons/${itemData.imageName}`}
           alt={itemData.title}
           className={styles.skillImage}
         />

@@ -8,6 +8,8 @@ interface WorkDetailsProps {
 }
 
 const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
+  const basePath = process.env.BASE_PATH || '';
+
   return (
     <div className={styles.workDetailsContainer}>
       <div className={styles.titleContainer}>
@@ -16,7 +18,7 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
       </div>
       <div className={styles.imgContainer}>
         <Image
-          src={`/my_portfolio/images/${selectedData.imageName}`}
+          src={`${basePath}/images/${selectedData.imageName}`}
           width={500}
           height={400}
           alt={selectedData.title}
@@ -63,7 +65,7 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
             {selectedData.imagesPath.map((img, index) => (
               <Image
                 key={index}
-                src={`/my_portfolio/images/work-images/${img}`}
+                src={`${basePath}/images/work-images/${img}`}
                 width={500}
                 height={400}
                 alt={selectedData.title}

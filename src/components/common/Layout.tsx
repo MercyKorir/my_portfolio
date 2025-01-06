@@ -11,12 +11,16 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter();
   const isHomePage = router.pathname === "/";
+  const basePath = process.env.BASE_PATH || '';
 
   return (
     <div
       className={`${styles.layoutContainer} ${
         isHomePage ? styles.homeLayout : ""
       }`}
+      style={{
+        backgroundImage: `url('${basePath}/images/bg.svg')`
+      }}
     >
       <main className={styles.mainContainer}>
         <span className={styles.navigation}>

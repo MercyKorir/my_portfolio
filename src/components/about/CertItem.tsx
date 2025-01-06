@@ -9,6 +9,8 @@ interface CertItemProps {
 }
 
 const CertItem: React.FC<CertItemProps> = ({ cert, isLastItem }) => {
+  const basePath = process.env.BASE_PATH || '';
+  
   return (
     <div
       className={`${styles.certItemContainer} ${
@@ -28,7 +30,7 @@ const CertItem: React.FC<CertItemProps> = ({ cert, isLastItem }) => {
         </div>
         <div className={styles.imageContainer}>
           <Image
-            src={`/my_portfolio/images/about-assets/${cert.imageName}`}
+            src={`${basePath}/images/about-assets/${cert.imageName}`}
             width={700}
             height={400}
             alt={cert.title}

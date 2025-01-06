@@ -14,7 +14,6 @@
 .aboutMeIntroContainer {
   width: 100%;
   height: auto;
-  background-image: url("/my_portfolio/images/otherbg.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -170,7 +169,6 @@
   width: 100%;
   height: auto;
   padding: 0px 10px 50px 10px;
-  background-image: url("/my_portfolio/images/otherbg2.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

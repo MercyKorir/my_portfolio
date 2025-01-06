@@ -8,6 +8,8 @@ interface EducationItemProps {
 }
 
 const EducationItem: React.FC<EducationItemProps> = ({ education }) => {
+  const basePath = process.env.BASE_PATH || '';
+
   return (
     <div className={styles.educationItemContainer}>
       <div className={styles.headerContainer}>
@@ -20,7 +22,7 @@ const EducationItem: React.FC<EducationItemProps> = ({ education }) => {
       </div>
       <div className={styles.imageContainer}>
         <Image
-          src={`/my_portfolio/images/about-assets/${education.imageName}`}
+          src={`${basePath}/images/about-assets/${education.imageName}`}
           alt={education.title}
           width={700}
           height={400}

@@ -9,6 +9,8 @@ interface ProjectDetailsProps {
 }
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ selectedData }) => {
+  const basePath = process.env.BASE_PATH || '';
+
   return (
     <div className={styles.projectDetailsContainer}>
       <div className={styles.titleContainer}>
@@ -31,7 +33,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ selectedData }) => {
           />
         ) : (
           <Image
-            src={`/my_portfolio/images/${selectedData.imageName}`}
+            src={`${basePath}/images/${selectedData.imageName}`}
             width={500}
             height={400}
             alt={selectedData.title}
@@ -66,7 +68,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ selectedData }) => {
             {selectedData.imagesPath.map((img, index) => (
               <Image
                 key={index}
-                src={`/my_portfolio/images/project-images/${img}`}
+                src={`${basePath}/images/project-images/${img}`}
                 width={500}
                 height={400}
                 alt={selectedData.title}

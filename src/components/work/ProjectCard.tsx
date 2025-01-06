@@ -14,6 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   clickFunction,
 }) => {
   const [showThumbnail, setShowThumbnail] = useState(true);
+  const basePath = process.env.BASE_PATH || '';
 
   useEffect(() => {
     if (project.demoUrl) {
@@ -32,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {project.demoUrl ? (
             showThumbnail ? (
               <Image
-                src={`/my_portfolio/images/${project.imageName}`}
+                src={`${basePath}/images/${project.imageName}`}
                 alt={project.title}
                 width={700}
                 height={400}
@@ -57,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             )
           ) : (
             <Image
-              src={`/my_portfolio/images/${project.imageName}`}
+              src={`${basePath}/images/${project.imageName}`}
               alt={project.title}
               width={700}
               height={400}
