@@ -31,7 +31,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ selectedData }) => {
           />
         ) : (
           <Image
-            src={`/images/${selectedData.imageName}`}
+            src={`/my_portfolio/images/${selectedData.imageName}`}
             width={500}
             height={400}
             alt={selectedData.title}
@@ -66,7 +66,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ selectedData }) => {
             {selectedData.imagesPath.map((img, index) => (
               <Image
                 key={index}
-                src={`/images/project-images/${img}`}
+                src={`/my_portfolio/images/project-images/${img}`}
                 width={500}
                 height={400}
                 alt={selectedData.title}

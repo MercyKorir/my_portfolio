@@ -62,7 +62,7 @@ const AboutMe: React.FC<AboutMeProps> = () => {
                       height={300}
                       width={400}
                       alt="Social Background"
-                      src={"/images/social-icons-bg.svg"}
+                      src={"/my_portfolio/images/social-icons-bg.svg"}
                       className={styles.socialIconsBg}
                     />
                     <div className={styles.socialIconsItems}>

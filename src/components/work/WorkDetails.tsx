@@ -16,7 +16,7 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
       </div>
       <div className={styles.imgContainer}>
         <Image
-          src={`/images/${selectedData.imageName}`}
+          src={`/my_portfolio/images/${selectedData.imageName}`}
           width={500}
           height={400}
           alt={selectedData.title}
@@ -63,7 +63,7 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
             {selectedData.imagesPath.map((img, index) => (
               <Image
                 key={index}
-                src={`/images/work-images/${img}`}
+                src={`/my_portfolio/images/work-images/${img}`}
                 width={500}
                 height={400}
                 alt={selectedData.title}

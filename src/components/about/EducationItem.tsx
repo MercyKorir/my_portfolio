@@ -20,7 +20,7 @@ const EducationItem: React.FC<EducationItemProps> = ({ education }) => {
       </div>
       <div className={styles.imageContainer}>
         <Image
-          src={`/images/about-assets/${education.imageName}`}
+          src={`/my_portfolio/images/about-assets/${education.imageName}`}
           alt={education.title}
           width={700}
           height={400}

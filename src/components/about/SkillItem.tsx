@@ -14,7 +14,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ itemData }) => {
         <Image
           width={150}
           height={100}
-          src={`/images/skill-icons/${itemData.imageName}`}
+          src={`/my_portfolio/images/skill-icons/${itemData.imageName}`}
           alt={itemData.title}
           className={styles.skillImage}
         />
