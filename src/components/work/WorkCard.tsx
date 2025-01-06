@@ -18,7 +18,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
       <div className={styles.cardContent}>
         <div className={styles.cardImageContainer}>
           <Image
-            src={`/my-portfolio/images/${work.imageName}`}
+            src={`/my_portfolio/images/${work.imageName}`}
             alt={work.title}
             width={320}
             height={200}
