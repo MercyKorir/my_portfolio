@@ -9,7 +9,6 @@ const nextConfig = {
   },
   env: {
     BASE_PATH: isProd ? '/my_portfolio' : '',
-    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
   },
 };
 
