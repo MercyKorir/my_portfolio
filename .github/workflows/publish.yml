@@ -41,6 +41,13 @@ jobs:
       - name: List files in the ./out directory
         run: ls -la ./out
 
+      - name: Unmask Secret for Debugging
+        run: echo "Unmasking secret for debugging"
+        env:
+          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+        with:
+          mask-inputs: false
+
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
