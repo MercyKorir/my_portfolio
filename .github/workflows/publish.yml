@@ -32,6 +32,9 @@ jobs:
         with:
           static_site_generator: next
 
+      - name: Tell me my secret
+        run: echo "My secret is ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}"
+
       - name: Build with Next.js 🏗️
         run: npm run build
         env:
