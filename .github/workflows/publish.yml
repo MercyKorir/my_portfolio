@@ -34,7 +34,7 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npm run build
-        with:
+        env:
           NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
 
       - name: List files in workspace
