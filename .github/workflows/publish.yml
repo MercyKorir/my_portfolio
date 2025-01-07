@@ -24,8 +24,8 @@ jobs:
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
 
-      - name: Clear GitHub Pages cache
-        run: rm -rf ./out/.cache
+      # - name: Clear GitHub Pages cache
+      #   run: rm -rf ./out/.cache
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
@@ -34,16 +34,6 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npm run build
-        env:
-          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
-
-      - name: Debug Cloudinary Secret
-        run: |
-          if [ -z "${NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}" ]; then
-            echo "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not set"
-          else
-            echo "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is set"
-          fi
         env:
           NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
 
@@ -70,5 +60,3 @@ jobs:
       - name: Publish to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v4
-        env:
-          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
