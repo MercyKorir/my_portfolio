@@ -16,6 +16,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
+    env:
+      NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
 
     steps:
       - name: Checkout 🛎️
@@ -33,12 +36,10 @@ jobs:
           static_site_generator: next
 
       - name: Tell me my secret
-        run: echo "My secret is ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}"
+        run: echo "My secret is ${{ env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}"
 
       - name: Build with Next.js 🏗️
         run: npm run build
-        env:
-          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
 
       - name: List files in workspace
         run: ls -la
