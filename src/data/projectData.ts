@@ -8,6 +8,7 @@ const projectData: ProjectData[] = [
     description: "A personal portfolio website.",
     imageName: "cryptoapp-img.png",
     demoUrl: `${basePath}/videos/crypto-dashboard-demo.mp4`,
+    cldPublicId: "crypto-dashboard-demo_zbmizt",
     problem:
       "Imagine being a cryptocurrency enthusiast, constantly keeping an eye on the ever-changing market. You want to stay up-to-date with the latest prices, market caps, and trends, but navigating through multiple websites and tracking spreadsheets can be overwhelming. Wouldn't it be amazing to have a one-stop-shop where you can easily access all the essential information about your favorite cryptocurrencies, right at your fingertips?\
     That's where our cryptocurrency dashboard web application comes in. We set out to create a user-friendly, visually appealing, and feature-rich platform that caters to the needs of crypto enthusiasts like you. Our goal was to provide a seamless experience, allowing you to effortlessly track your investments, discover new opportunities, and stay ahead of the game.",
@@ -29,6 +30,7 @@ const projectData: ProjectData[] = [
     description: "A full stack e-commerce platform.",
     imageName: "courseapp-img.png",
     demoUrl: `${basePath}/videos/course-app-demo.mp4`,
+    cldPublicId: "course-app-demo_cia7iv",
     problem:
       "Imagine being an educator, passionately dedicated to providing the best learning experience for your students. You want to streamline the process of managing courses, enrollments, and related activities, eliminating the hassle of juggling multiple tools and spreadsheets. Wouldn't it be a game-changer to have a comprehensive platform that empowers you to focus on what truly matters – delivering exceptional education?\
     That's where our visionary Course Management System comes into play. We set out to create a user-friendly, feature-rich application that revolutionizes the way you manage your courses. Our goal was to provide a seamless experience, allowing you to effortlessly handle administrative tasks, foster collaboration, and unleash the full potential of your educational endeavors.",
@@ -44,6 +46,7 @@ const projectData: ProjectData[] = [
     title: "TastyBook",
     description: "A personal portfolio website.",
     imageName: "tastybook-img.png",
+    cldPublicId: "tastybook-demo_o7wibp",
     // demoUrl: "/videos/tastybook-demo.mp4", // Not able to upload will use google drive in future
   },
   {

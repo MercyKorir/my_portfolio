@@ -3,6 +3,7 @@ import Image from "next/image";
 import ReactPlayer from "react-player";
 import styles from "../../styles/ProjectCard.module.css";
 import { ProjectData } from "@/types/types";
+import { CldVideoPlayer } from "next-cloudinary";
 
 interface ProjectCardProps {
   project: ProjectData;
@@ -14,24 +15,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   clickFunction,
 }) => {
   const [showThumbnail, setShowThumbnail] = useState(true);
-  const basePath = process.env.BASE_PATH || '';
+  const [videoError, setVideoError] = useState(false);
+  const basePath = process.env.BASE_PATH || "";
 
   useEffect(() => {
-    if (project.demoUrl) {
+    if (project.demoUrl || project.cldPublicId) {
       const timer = setTimeout(() => {
         setShowThumbnail(false);
       }, 5000);
 
       return () => clearTimeout(timer);
     }
-  }, [project.demoUrl]);
+  }, [project.demoUrl, project.cldPublicId]);
+
+  const handleVideoError = () => {
+    setVideoError(true);
+    setShowThumbnail(true);
+  };
 
   return (
     <div className={styles.projectCardContainer}>
       <div className={styles.projectCardContent} onClick={clickFunction}>
         <div className={styles.projectImageContainer}>
-          {project.demoUrl ? (
-            showThumbnail ? (
+          {project.demoUrl || project.cldPublicId ? (
+            showThumbnail || videoError ? (
               <Image
                 src={`${basePath}/images/${project.imageName}`}
                 alt={project.title}
@@ -39,6 +46,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 height={400}
                 className={styles.projectImage}
               />
+            ) : project.cldPublicId ? (
+              <div className={styles.reactPlayerWrapper}>
+                <CldVideoPlayer
+                  id={`video-${project.title
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                  className={styles.reactPlayer}
+                  width="100%"
+                  height="100%"
+                  src={project.cldPublicId}
+                  autoplay="on-scroll"
+                  loop={true}
+                  muted={true}
+                  controls={false}
+                  aspectRatio="16:9"
+                  playbackRates={[1]}
+                  playsinline={true}
+                  bigPlayButton={false}
+                  onError={handleVideoError}
+                />
+              </div>
             ) : (
               <div className={styles.reactPlayerWrapper}>
                 <ReactPlayer
