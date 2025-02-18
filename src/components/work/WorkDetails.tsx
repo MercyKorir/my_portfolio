@@ -49,6 +49,16 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({ selectedData }) => {
                 ))}
               </ul>
             </div>
+            {selectedData.achievements && (
+              <div className={styles.frontend}>
+                <h5>Achievements</h5>
+                <ul>
+                  {selectedData.achievements.map((achievement, index) => (
+                    <li key={index}>{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
