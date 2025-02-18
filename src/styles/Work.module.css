@@ -62,10 +62,11 @@
 .workExpContainer {
   width: 100%;
   height: auto;
-  padding: 50px 20px 0px 20px;
+  padding: 50px 20px 60px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
 }
 
 .workExpTitle {
@@ -84,6 +85,73 @@
   width: 30px;
   height: 2px;
   background-color: #ffffff;
+}
+
+.workExpWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.navigationButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.navButton {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(240, 138, 138, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.navButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prevButton {
+  left: 0;
+}
+
+.nextButton {
+  right: 0;
+}
+
+.workExpList {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 0 0px 5px 0px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.workExpList::-webkit-scrollbar {
+  display: none;
 }
 
 .workExpList {
@@ -207,7 +275,7 @@
   }
 
   .workExpContainer {
-    padding: 20px 250px;
+    padding: 20px 250px 80px 250px;
     gap: 30px;
   }
 
@@ -223,7 +291,21 @@
   .workExpList {
     overflow-x: hidden;
     gap: 30px;
-    padding: 0;
+    padding: 0 60px;
+
+  }
+
+  .workExpWrapper {
+    gap: 20px;
+  }
+
+  .navigationButtons {
+    margin-top: 30px;
+  }
+
+  .navButton {
+    width: 48px;
+    height: 48px;
   }
 
   .projectsContainer {

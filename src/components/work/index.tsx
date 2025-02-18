@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Head from "next/head";
 import WorkCard from "./WorkCard";
 import ProjectCard from "./ProjectCard";
@@ -8,6 +8,7 @@ import userIntersectionObserver from "@/hooks/userIntersectionObserver";
 import { WorkData, ProjectData } from "@/types/types";
 import workData from "@/data/workData";
 import projectData from "@/data/projectData";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface WorkSectionProps {}
 
@@ -17,6 +18,9 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
   const [selectedData, setSelectedData] = useState<
     WorkData | ProjectData | null
   >(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const workListRef = useRef<HTMLDivElement>(null);
+
   const basePath = process.env.BASE_PATH || "";
 
   const handleShowWorkDetails = (work: WorkData) => {
@@ -32,6 +36,34 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedData(null);
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (workListRef.current) {
+      const cards = workListRef.current.children;
+
+      if (cards[index]) {
+        cards[index].scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "start",
+        });
+      }
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < workData.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+      scrollToIndex(currentIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+      scrollToIndex(currentIndex - 1);
+    }
   };
 
   return (
@@ -67,14 +99,38 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
               </div>
               <div className={styles.workExpContainer}>
                 <h4 className={styles.workExpTitle}>Work Experience</h4>
-                <div className={styles.workExpList}>
-                  {workData.map((work, index) => (
-                    <WorkCard
-                      key={index}
-                      work={work}
-                      clickFunction={() => handleShowWorkDetails(work)}
-                    />
-                  ))}
+                <div className={styles.workExpWrapper}>
+                  <div className={styles.workExpList} ref={workListRef}>
+                    {workData.map((work, index) => (
+                      <WorkCard
+                        key={index}
+                        work={work}
+                        clickFunction={() => handleShowWorkDetails(work)}
+                      />
+                    ))}
+                  </div>
+                  <div className={styles.navigationButtons}>
+                    <button
+                      className={`${styles.navButton} ${
+                        currentIndex === 0 ? styles.disabled : ""
+                      }`}
+                      onClick={handlePrev}
+                      disabled={currentIndex === 0}
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button
+                      className={`${styles.navButton} ${
+                        currentIndex === workData.length - 1
+                          ? styles.disabled
+                          : ""
+                      }`}
+                      onClick={handleNext}
+                      disabled={currentIndex === workData.length - 1}
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
