@@ -17,9 +17,11 @@ export interface ProjectData {
   cldImgPublicId?: string;
   demoUrl?: string;
   cldPublicId?: string;
+  technologies?: string[];
   problem?: string;
   solution?: string;
   webUrl?: string;
+  githubUrl?: string;
   imagesPath?: string[];
 }
 

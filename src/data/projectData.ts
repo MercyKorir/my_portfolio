@@ -10,12 +10,14 @@ const projectData: ProjectData[] = [
     cldImgPublicId: "cryptoapp-img_ovf2ok",
     demoUrl: `${basePath}/videos/crypto-dashboard-demo.mp4`,
     cldPublicId: "crypto-dashboard-demo_zbmizt",
+    technologies: ["React.js", "Firebase", "Axios", "CoinGecko API", "CSS3"],
     problem:
       "Imagine being a cryptocurrency enthusiast, constantly keeping an eye on the ever-changing market. You want to stay up-to-date with the latest prices, market caps, and trends, but navigating through multiple websites and tracking spreadsheets can be overwhelming. Wouldn't it be amazing to have a one-stop-shop where you can easily access all the essential information about your favorite cryptocurrencies, right at your fingertips?\
     That's where our cryptocurrency dashboard web application comes in. We set out to create a user-friendly, visually appealing, and feature-rich platform that caters to the needs of crypto enthusiasts like you. Our goal was to provide a seamless experience, allowing you to effortlessly track your investments, discover new opportunities, and stay ahead of the game.",
     solution:
       "Fueled by passion, you crafted a visionary cryptocurrency dashboard web app using React.js, React Router, CSS, Axios, and Firebase Authentication. This masterpiece transcends data display, immersing users in a captivating crypto journey - from the stunning homepage to detailed coin pages with seamless authentication, responsive design across devices, smooth pagination, and graceful error handling. Your dedication shines through this feature-rich application, empowering enthusiasts to navigate the ever-evolving landscape with cutting-edge tech at their fingertips.",
     webUrl: "https://crypto-dashboard-beta-lyart.vercel.app/",
+    githubUrl: "https://github.com/MercyKorir/crypto-dashboard",
     imagesPath: [
       "crypto-1.png",
       "crypto-2.png",
@@ -33,11 +35,13 @@ const projectData: ProjectData[] = [
     cldImgPublicId: "courseapp-img_xtwb0s",
     demoUrl: `${basePath}/videos/course-app-demo.mp4`,
     cldPublicId: "course-app-demo_cia7iv",
+    technologies: ["React.js", "CodeIgniter 4", "MySQL", "OAuth2", "Axios", "Webpack"],
     problem:
       "Imagine being an educator, passionately dedicated to providing the best learning experience for your students. You want to streamline the process of managing courses, enrollments, and related activities, eliminating the hassle of juggling multiple tools and spreadsheets. Wouldn't it be a game-changer to have a comprehensive platform that empowers you to focus on what truly matters – delivering exceptional education?\
     That's where our visionary Course Management System comes into play. We set out to create a user-friendly, feature-rich application that revolutionizes the way you manage your courses. Our goal was to provide a seamless experience, allowing you to effortlessly handle administrative tasks, foster collaboration, and unleash the full potential of your educational endeavors.",
     solution:
       "Fueled by a passion for education, we crafted a cutting-edge Course Management System that harmonizes CodeIgniter's robustness with React.js's flexibility. This feature-rich platform empowers you to seamlessly create, manage, and enrich courses with multimedia uploads, user authentication, and responsive design across devices. Streamline administrative tasks through bulk operations, sorting, and filtering. Our iterative approach ensures continuous refinement, incorporating innovative technologies like AI chatbots and rich text editing. Unlock your educational prowess with our visionary solution, revolutionizing course management and inspiring learners worldwide.",
+    githubUrl: "https://github.com/MercyKorir/course-app-management-system"
   },
   {
     title: "Blog Design Challenge",
@@ -47,10 +51,16 @@ const projectData: ProjectData[] = [
   },
   {
     title: "TastyBook",
-    description: "A personal portfolio website.",
+    description: "Full-stack recipe management platform.",
     imageName: "tastybook-img.png",
     cldImgPublicId: "tastybook-img_fw4vjl",
     cldPublicId: "tastybook-demo_o7wibp",
+    technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "Passport.js", "JWT"],
+    problem:
+      "Home cooks and food enthusiasts need a reliable platform to store, organize, and share their recipes. Existing solutions often lack proper organization features and scalability for growing recipe collections.",
+    solution:
+      "Developed a full-stack recipe management platform that supports over 1000 recipe entries with MongoDB Atlas for cloud scalability. The application provides comprehensive CRUD operations for recipe management with robust authentication.",
+    githubUrl: "https://github.com/MercyKorir/TastyBook"
   },
   {
     title: "Bitnine Global Clone",
@@ -61,17 +71,28 @@ const projectData: ProjectData[] = [
   },
   {
     title: "MeloMeet",
-    description: "A personal portfolio website.",
+    description: "Real-time music synchronization platform with Spotify integration.",
     imageName: "melomeet-img.png",
     cldImgPublicId: "melomeet-img_zn5qmh",
+    technologies: ["Python", "Flask", "JavaScript", "Spotify API", "WebSocket"],
+    problem:
+      "Music enthusiasts want to share and synchronize their listening experience with friends in real-time, but existing solutions often lack proper synchronization and social features.",
+    solution:
+      "Engineered a Flask-based application with Spotify API integration that enables real-time playlist synchronization for concurrent users, creating a shared music listening experience.",
     webUrl: "https://mercykorir.github.io/",
   },
   {
     title: "ToDo App",
-    description: "A personal portfolio website.",
+    description: "Firebase-powered task management application with Google authentication.",
     imageName: "todo-img.png",
     cldImgPublicId: "todo-img_dnzzur",
+    technologies: ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
+    problem:
+      "Users need a reliable and secure task management solution that provides seamless authentication and real-time updates across devices.",
+    solution:
+      "Built a modern task management application using Next.js and Firebase, featuring Google Sign-in integration and real-time data synchronization.",
     webUrl: "https://todo-app-eight-roan.vercel.app/",
+    githubUrl: "https://github.com/MercyKorir/todoList-app"
   },
   {
     title: "Wallpaper Website",
