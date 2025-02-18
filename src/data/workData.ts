@@ -4,7 +4,7 @@ const workData: WorkData[] = [
   {
     title: "Full Stack Developer",
     organization: "Daktari Online",
-    imageName: "daktari-online.png",
+    imageName: "daktari_online.png",
     description: 
       "At Daktari Online, I spearheaded the transformation of their CPD accreditation system, architecting robust solutions that significantly enhanced platform performance and user experience. Through strategic implementation of RESTful APIs and optimization of database queries, I crafted a seamless system that efficiently serves thousands of healthcare professionals monthly. My role combined technical innovation with practical problem-solving, resulting in substantial improvements in system reliability and user engagement.",
     frontTechnologies: ["React.js", "HTML5", "CSS3", "JavaScript", "JQuery", "TypeScript", "Bootstrap"],

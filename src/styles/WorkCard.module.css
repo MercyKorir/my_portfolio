@@ -23,15 +23,48 @@
   height: 60%;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 0px 55px;
+  position: relative;
 }
 
 .cardImage {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0px 50px;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.cardImageContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 0px 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  z-index: 1;
+  opacity: 0;
+}
+
+.cardImageContainer:not(:has(img[src])) ::before {
+  opacity: 1;
 }
 
 .cardTitle {
