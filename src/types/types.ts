@@ -7,6 +7,7 @@ export interface WorkData {
   backTechnologies: string[];
   webUrl?: string;
   imagesPath?: string[];
+  achievements?: string[];
 }
 
 export interface ProjectData {
