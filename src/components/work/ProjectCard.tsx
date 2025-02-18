@@ -16,6 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const [showThumbnail, setShowThumbnail] = useState(true);
   const [videoError, setVideoError] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const basePath = process.env.BASE_PATH || "";
 
   useEffect(() => {
@@ -33,19 +34,44 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     setShowThumbnail(true);
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  const renderImage = () => {
+    if (project.cldImgPublicId && !imageError) {
+      return (
+        <Image
+          className={styles.projectImage}
+          width={700}
+          height={400}
+          src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${project.cldImgPublicId}`}
+          alt={project.title}
+          onError={handleImageError}
+          loading="lazy"
+        />
+      );
+    }
+
+    return (
+      <Image
+        src={`${basePath}/images/${project.imageName}`}
+        alt={project.title}
+        width={700}
+        height={400}
+        className={styles.projectImage}
+        loading="lazy"
+      />
+    );
+  };
+
   return (
     <div className={styles.projectCardContainer}>
       <div className={styles.projectCardContent} onClick={clickFunction}>
         <div className={styles.projectImageContainer}>
           {project.demoUrl || project.cldPublicId ? (
             showThumbnail || videoError ? (
-              <Image
-                src={`${basePath}/images/${project.imageName}`}
-                alt={project.title}
-                width={700}
-                height={400}
-                className={styles.projectImage}
-              />
+              renderImage()
             ) : project.cldPublicId ? (
               <div className={styles.reactPlayerWrapper}>
                 <CldVideoPlayer
@@ -85,13 +111,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               </div>
             )
           ) : (
-            <Image
-              src={`${basePath}/images/${project.imageName}`}
-              alt={project.title}
-              width={700}
-              height={400}
-              className={styles.projectImage}
-            />
+            renderImage()
           )}
         </div>
         <span className={styles.projectTitleContainer}>

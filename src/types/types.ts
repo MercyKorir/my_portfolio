@@ -14,6 +14,7 @@ export interface ProjectData {
   title: string;
   description: string;
   imageName: string;
+  cldImgPublicId?: string;
   demoUrl?: string;
   cldPublicId?: string;
   problem?: string;

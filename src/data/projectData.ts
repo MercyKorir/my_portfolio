@@ -7,6 +7,7 @@ const projectData: ProjectData[] = [
     title: "Crypto Dashboard",
     description: "A personal portfolio website.",
     imageName: "cryptoapp-img.png",
+    cldImgPublicId: "cryptoapp-img_ovf2ok",
     demoUrl: `${basePath}/videos/crypto-dashboard-demo.mp4`,
     cldPublicId: "crypto-dashboard-demo_zbmizt",
     problem:
@@ -29,6 +30,7 @@ const projectData: ProjectData[] = [
     title: "Course Web Application",
     description: "A full stack e-commerce platform.",
     imageName: "courseapp-img.png",
+    cldImgPublicId: "courseapp-img_xtwb0s",
     demoUrl: `${basePath}/videos/course-app-demo.mp4`,
     cldPublicId: "course-app-demo_cia7iv",
     problem:
@@ -41,36 +43,41 @@ const projectData: ProjectData[] = [
     title: "Blog Design Challenge",
     description: "A full stack e-commerce platform.",
     imageName: "blog-design-img.png",
+    cldImgPublicId: "blog-design-img_yf2zai",
   },
   {
     title: "TastyBook",
     description: "A personal portfolio website.",
     imageName: "tastybook-img.png",
+    cldImgPublicId: "tastybook-img_fw4vjl",
     cldPublicId: "tastybook-demo_o7wibp",
-    // demoUrl: "/videos/tastybook-demo.mp4", // Not able to upload will use google drive in future
   },
   {
     title: "Bitnine Global Clone",
     description: "A personal portfolio website.",
     imageName: "bitnine-img.png",
+    cldImgPublicId: "bitnine-img_sculsp",
     webUrl: "https://bitnine-clone-gules.vercel.app/",
   },
   {
     title: "MeloMeet",
     description: "A personal portfolio website.",
     imageName: "melomeet-img.png",
+    cldImgPublicId: "melomeet-img_zn5qmh",
     webUrl: "https://mercykorir.github.io/",
   },
   {
     title: "ToDo App",
     description: "A personal portfolio website.",
     imageName: "todo-img.png",
+    cldImgPublicId: "todo-img_dnzzur",
     webUrl: "https://todo-app-eight-roan.vercel.app/",
   },
   {
     title: "Wallpaper Website",
     description: "A personal portfolio website.",
     imageName: "wallpaper-web-img.png",
+    cldImgPublicId: "wallpaper-web-img_omiecz",
   },
 ];
 
