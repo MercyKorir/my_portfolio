@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import Image from "next/image";
 import { ProjectData } from "@/types/types";
 import ReactPlayer from "react-player";
 import { CldVideoPlayer } from "next-cloudinary";
 import { GitHub } from "@mui/icons-material";
 import { Globe } from "lucide-react";
+import { sanitized } from "@/utils/helpers";
 import styles from "../../styles/ProjectDetails.module.css";
 
 interface ProjectDetailsProps {
@@ -14,6 +15,7 @@ interface ProjectDetailsProps {
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ selectedData }) => {
   const basePath = process.env.BASE_PATH || "";
   const [videoError, setVideoError] = useState(false);
+  const reactId = useId();
 
   const handleVideoError = () => {
     setVideoError(true);
@@ -35,9 +37,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ selectedData }) => {
     if (selectedData.cldPublicId) {
       return (
         <CldVideoPlayer
-          id={`detail-video-${selectedData.title
-            .toLowerCase()
-            .replace(/\s+/g, "-")}`}
+          id={`${sanitized(
+            `detail-${selectedData.title}`,
+            selectedData.cldPublicId
+          )}-${reactId}`}
           width="100%"
           height="100%"
           src={selectedData.cldPublicId}

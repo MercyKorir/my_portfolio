@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import styles from "../../styles/ProjectCard.module.css";
 import { ProjectData } from "@/types/types";
 import { CldVideoPlayer } from "next-cloudinary";
+import { sanitized } from "@/utils/helpers";
 
 interface ProjectCardProps {
   project: ProjectData;
@@ -18,6 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [videoError, setVideoError] = useState(false);
   const [imageError, setImageError] = useState(false);
   const basePath = process.env.BASE_PATH || "";
+  const reactId = useId();
 
   useEffect(() => {
     if (project.demoUrl || project.cldPublicId) {
@@ -75,9 +77,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             ) : project.cldPublicId ? (
               <div className={styles.reactPlayerWrapper}>
                 <CldVideoPlayer
-                  id={`video-${project.title
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}`}
+                  id={`${sanitized(
+                    `card-${project.title}`,
+                    project.cldPublicId
+                  )}-${reactId}`}
                   className={styles.reactPlayer}
                   width="100%"
                   height="100%"
