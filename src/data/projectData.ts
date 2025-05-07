@@ -4,6 +4,38 @@ const basePath = process.env.BASE_PATH || "";
 
 const projectData: ProjectData[] = [
   {
+    title: "Book Borrowing System",
+    description: "A simple book borrowing system.",
+    imageName: "book-lending-app.png",
+    cldImgPublicId: "book-lending-app_t350ob",
+    cldPublicId: "Book_lending_app_demo_compressed_hdhnc7",
+    technologies: [
+      "Ruby on Rails",
+      "SQLite3",
+      "ERB",
+      "CSS3",
+      "Docker",
+      "Open Library API",
+    ],
+    githubUrl: "https://github.com/MercyKorir/book-lending-app",
+  },
+  {
+    title: "Book Assignment View",
+    description:
+      "Web application that allows teachers to assign books to students.",
+    imageName: "book-assignment-view.png",
+    cldImgPublicId: "Screenshot_935_xskiop",
+    technologies: [
+      "ReactJS",
+      "TypeScript",
+      "Material-UI",
+      "GraphQL",
+      "Node.js",
+    ],
+    webUrl: "https://book-assignment-view.netlify.app/",
+    githubUrl: "https://github.com/MercyKorir/book-assignment-view",
+  },
+  {
     title: "Crypto Dashboard",
     description: "A crypto dashboard web application.",
     imageName: "cryptoapp-img.png",
@@ -111,7 +143,15 @@ const projectData: ProjectData[] = [
       "Real-time music synchronization platform with Spotify integration.",
     imageName: "melomeet-img.png",
     cldImgPublicId: "melomeet-img_zn5qmh",
-    technologies: ["Python", "Django", "JavaScript", "SQLite", "Spotify API", "WebSocket", "Material UI Components"],
+    technologies: [
+      "Python",
+      "Django",
+      "JavaScript",
+      "SQLite",
+      "Spotify API",
+      "WebSocket",
+      "Material-UI",
+    ],
     problem:
       "Music enthusiasts want to share and synchronize their listening experience with friends in real-time, but existing solutions often lack proper synchronization and social features.",
     solution:
