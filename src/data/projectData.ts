@@ -24,7 +24,7 @@ const projectData: ProjectData[] = [
     description:
       "Web application that allows teachers to assign books to students.",
     imageName: "book-assignment-view.png",
-    cldImgPublicId: "Screenshot_935_xskiop",
+    cldImgPublicId: "book-assignment-view_kidcmb",
     technologies: [
       "ReactJS",
       "TypeScript",
