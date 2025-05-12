@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import WorkCard from "./WorkCard";
 import ProjectCard from "./ProjectCard";
@@ -22,6 +22,15 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
   const workListRef = useRef<HTMLDivElement>(null);
 
   const basePath = process.env.BASE_PATH || "";
+
+  useEffect(() => {
+    if (showModal) {
+      const allVideos = document.querySelectorAll("video");
+      allVideos.forEach((video: HTMLVideoElement) => {
+        video.pause();
+      });
+    }
+  }, [showModal]);
 
   const handleShowWorkDetails = (work: WorkData) => {
     setSelectedData(work);
@@ -149,6 +158,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
                     key={index}
                     project={project}
                     clickFunction={() => handleShowProjectDetails(project)}
+                    isModalOpen={showModal}
                   />
                 ))}
               </div>

@@ -9,11 +9,13 @@ import { sanitized } from "@/utils/helpers";
 interface ProjectCardProps {
   project: ProjectData;
   clickFunction: () => void;
+  isModalOpen: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
   clickFunction,
+  isModalOpen,
 }) => {
   const [showThumbnail, setShowThumbnail] = useState(true);
   const [videoError, setVideoError] = useState(false);
@@ -30,6 +32,48 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       return () => clearTimeout(timer);
     }
   }, [project.demoUrl, project.cldPublicId]);
+
+  useEffect(() => {
+    if (!project.cldPublicId || showThumbnail || videoError) return;
+
+    const videoId = `${sanitized(
+      `detail-${project.title}`,
+      project.cldPublicId
+    )}-${reactId}`;
+
+    const playerElement = document.getElementById(videoId);
+    if (!playerElement) return;
+
+    const videoElement = playerElement.querySelector("video");
+    if (!videoElement) return;
+
+    if (isModalOpen) {
+      videoElement.pause();
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !isModalOpen) {
+              videoElement.play()
+              .catch((error) => console.error(`Error playing video: ${error}`))
+            } else {
+              videoElement.pause()
+            }
+          })
+        },
+        {threshold: 0.3}
+      )
+      observer.observe(playerElement)
+      return () => observer.disconnect()
+    }
+  }, [
+    isModalOpen,
+    project.cldPublicId,
+    showThumbnail,
+    videoError,
+    reactId,
+    project.title,
+  ]);
 
   const handleVideoError = () => {
     setVideoError(true);
@@ -103,7 +147,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   width="100%"
                   height="100%"
                   url={project.demoUrl}
-                  playing={true}
+                  playing={!showThumbnail && !isModalOpen}
                   controls={false}
                   light={false}
                   loop={true}
