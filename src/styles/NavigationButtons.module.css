@@ -11,18 +11,6 @@
   width: calc(100% - 13px);
 }
 
-.outerLayerPrev {
-  position: absolute;
-  left: 0;
-  transform: translateX(-50%);
-}
-
-.outerLayerNext {
-  position: absolute;
-  right: 0;
-  transform: translateX(50%);
-}
-
 .buttonOuterLayer {
   width: 120px;
   height: 120px;
@@ -30,6 +18,8 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  z-index: 101;
+  pointer-events: auto;
 }
 
 .buttonOuterLayer::before {
@@ -45,6 +35,20 @@
   box-shadow: -200px 0 0 200px rgba(30, 30, 30, 0.3);
 }
 
+.outerLayerPrev {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outerLayerNext {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
 .buttonOuterLayer button {
   position: absolute;
   top: 50%;
@@ -56,6 +60,7 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  z-index: 102;
 }
 
 /* Media Queries */
