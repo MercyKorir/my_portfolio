@@ -32,7 +32,7 @@
 
 .leftText p {
   font-size: 16px;
-  color: rgba(30, 30, 30, 0.4);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .centerItems {
@@ -86,7 +86,7 @@
 
 .rightItems h3 {
   font-size: 16px;
-  color: rgba(30, 30, 30, 0.4);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Media Queries */
@@ -123,7 +123,6 @@
 
   .leftText p {
     font-size: 16px;
-    color: rgba(30, 30, 30, 0.4);
   }
 
   .centerItems {
@@ -157,7 +156,6 @@
 
   .rightItems h3 {
     font-size: 18px;
-    color: rgba(30, 30, 30, 0.4);
   }
 }
 @media (min-width: 1025px) {
