@@ -82,6 +82,7 @@
   font-size: 20px;
   font-weight: 700;
   color: #f08a8a;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
 }
 
 .cardTitle p {
