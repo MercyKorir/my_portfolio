@@ -54,17 +54,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting && !isModalOpen) {
-              videoElement.play()
-              .catch((error) => console.error(`Error playing video: ${error}`))
+              videoElement
+                .play()
+                .catch((error) =>
+                  console.error(`Error playing video: ${error}`)
+                );
             } else {
-              videoElement.pause()
+              videoElement.pause();
             }
-          })
+          });
         },
-        {threshold: 0.3}
-      )
-      observer.observe(playerElement)
-      return () => observer.disconnect()
+        { threshold: 0.3 }
+      );
+      observer.observe(playerElement);
+      return () => observer.disconnect();
     }
   }, [
     isModalOpen,
@@ -113,7 +116,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div className={styles.projectCardContainer}>
-      <div className={styles.projectCardContent} onClick={clickFunction}>
+      <div className={styles.projectCardContent}>
         <div className={styles.projectImageContainer}>
           {project.demoUrl || project.cldPublicId ? (
             showThumbnail || videoError ? (
@@ -162,8 +165,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
         <span className={styles.projectTitleContainer}>
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
+          <div className={styles.projectTitleDescription}>
+            <h3>{project.title}</h3>
+          </div>
+          <button className={styles.detailsButton} onClick={clickFunction}>
+            View Details
+          </button>
         </span>
       </div>
     </div>

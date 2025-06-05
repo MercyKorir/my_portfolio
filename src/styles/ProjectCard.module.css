@@ -1,12 +1,15 @@
 .projectCardContainer {
   width: calc(100%);
   position: relative;
-  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .projectCardContent {
   width: 100%;
   height: auto;
+  position: relative;
+  aspect-ratio: 16/10;
 }
 
 .projectImageContainer {
@@ -16,10 +19,12 @@
 
 .projectImage {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.3s ease;
 }
 
 .reactPlayerWrapper {
@@ -39,6 +44,7 @@
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .projectTitleContainer {
@@ -46,29 +52,76 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 100px;
   z-index: 100;
   background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 10%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0.7) 100%
+    135deg,
+    rgba(15, 23, 42, 0.32) 0%,
+    rgba(30, 41, 59, 0.35) 100%
   );
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
   border-top-left-radius: 80% 70%;
   border-top-right-radius: 80% 70%;
-  display: none;
-  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.3s ease-in-out;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
 }
 
-.projectCardContainer:hover .projectTitleContainer {
-  display: flex;
-  opacity: 1;
+.projectTitleDescription h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.detailsButton {
+  width: 140px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #191714 0%, #333 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(16, 185, 129, 0.25);
+}
+
+.detailsButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.detailsButton:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px rgba(16, 185, 129, 0.25);
 }
 
 /* Media Queries */
@@ -84,9 +137,15 @@
     width: calc(50% - 15px);
   }
 
+  .projectCardContainer:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+
   .projectCardContent {
     width: 700px;
     height: 400px;
+    aspect-ratio: unset;
   }
 
   .projectImage {
@@ -94,9 +153,39 @@
     height: 400px;
   }
 
+  .projectCardContainer:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
   .projectTitleContainer {
     width: 700px;
-    height: 200px;
+    height: 160px;
+    gap: 18px;
+  }
+
+  .projectTitleDescription {
+    gap: 8px;
+  }
+
+  .projectTitleDescription h3 {
+    font-size: 1.375rem;
+  }
+
+  .detailsButton {
+    width: 170px;
+    height: 48px;
+    font-size: 0.9375rem;
+    border-radius: 12px;
+  }
+
+  .detailsButton:hover::before {
+    left: 100%;
+  }
+
+  .detailsButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
   }
 }
 
