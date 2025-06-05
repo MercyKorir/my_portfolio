@@ -100,7 +100,7 @@
   display: flex;
   gap: 16px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .navButton {
@@ -255,7 +255,7 @@
 
 @media (min-width: 769px) {
   .introHeader {
-    padding: 200px 0;
+    padding: 200px 0 20px 0;
   }
 
   .introHeaderContent {
@@ -301,7 +301,7 @@
   }
 
   .navigationButtons {
-    margin-top: 30px;
+    margin-top: 0px;
   }
 
   .navButton {
