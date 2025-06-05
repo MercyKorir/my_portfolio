@@ -9,6 +9,7 @@ import { WorkData, ProjectData } from "@/types/types";
 import workData from "@/data/workData";
 import projectData from "@/data/projectData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ScrollIndicator from "../common/ScrollIndicator";
 
 interface WorkSectionProps {}
 
@@ -142,6 +143,7 @@ const WorkSection: React.FC<WorkSectionProps> = () => {
                   </div>
                 </div>
               </div>
+              <ScrollIndicator />
             </div>
           </div>
           <div

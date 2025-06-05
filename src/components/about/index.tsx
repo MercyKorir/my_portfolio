@@ -11,6 +11,7 @@ import SkillItem from "./SkillItem";
 import CertItem from "./CertItem";
 import EducationItem from "./EducationItem";
 import styles from "../../styles/AboutMe.module.css";
+import ScrollIndicator from "../common/ScrollIndicator";
 
 interface AboutMeProps {}
 
@@ -111,6 +112,7 @@ const AboutMe: React.FC<AboutMeProps> = () => {
                   ))}
                 </div>
               </div>
+              <ScrollIndicator />
             </div>
           </div>
           <div
