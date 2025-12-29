@@ -57,7 +57,7 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
 
         <button
           onClick={() => setPage("work")}
-          className="group relative px-8 py-4 bg-transparent overflow-hidden rounded-none border border-cyan-500/50 hover:border-cyan-400 transition-all"
+          className="group relative px-8 py-4 mb-10 bg-transparent overflow-hidden rounded-none border border-cyan-500/50 hover:border-cyan-400 transition-all"
         >
           <div className="absolute inset-0 w-0 bg-cyan-500/10 transition-all duration-250 ease-out group-hover:w-full"></div>
           <span className="relative text-cyan-400 font-orbitron tracking-widest group-hover:text-white flex items-center gap-2">
