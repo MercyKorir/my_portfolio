@@ -104,7 +104,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       company: "Upsurge Solutions Kenya",
       role: "Front End Developer",
-      date: "May 2023 - Jul 2024",
+      date: "May 2023 - Jul 2023",
       desc: "Crafted responsive UI/UX for corporate clients.",
       contributions: [
         "Built high-performance SaaS product interfaces using React.js and Next.js, achieving 95% client satisfaction.",
