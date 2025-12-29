@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({
       <Navigation activePage={activePage} onPageChange={onPageChange} />
 
       <main className="pt-20 min-h-screen relative">
-        {/* Ambient Glows */}
+        {/* Glow */}
         <div className="fixed top-20 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
         <div className="fixed bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 

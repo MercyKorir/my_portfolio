@@ -23,20 +23,19 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Background Decor */}
+      {/* Background */}
       <div className="absolute inset-0 grid grid-cols-20 grid-rows-20 opacity-10 pointer-events-none">
         {[...Array(400)].map((_, i) => (
           <div key={i} className="border-[0.5px] border-cyan-900/30" />
         ))}
       </div>
 
-      {/* 3D Reactor Core Animation (CSS Only) */}
+      {/* 3D animation */}
       <div className="relative w-64 h-64 mb-12 group perspective-1000">
         <div className="absolute inset-0 rounded-full border-2 border-cyan-500/30 animate-spin-slow group-hover:border-cyan-400/80 transition-colors" />
         <div className="absolute inset-4 rounded-full border-2 border-purple-500/30 animate-spin-reverse group-hover:border-purple-400/80 transition-colors" />
         <div className="absolute inset-8 rounded-full border border-cyan-300/20 animate-pulse" />
 
-        {/* Core Text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-4xl font-black text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500 font-orbitron tracking-tighter animate-pulse">
             M.C.
@@ -44,7 +43,6 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="z-10 text-center max-w-2xl px-4">
         <div className="font-mono text-cyan-400 text-left bg-black/50 p-6 rounded-lg border border-cyan-900/50 shadow-[0_0_15px_rgba(6,182,212,0.15)] mb-8 min-h-[140px] whitespace-pre-line">
           {text}

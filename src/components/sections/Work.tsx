@@ -45,7 +45,7 @@ const Work: React.FC = () => {
         </div>
       </div>
 
-      {/* Projects Grid */}
+      {/* Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
         {PORTFOLIO_DATA.projects.map((project, idx) => (
           <div
@@ -59,7 +59,6 @@ const Work: React.FC = () => {
             }
             className="group relative h-80 bg-black/40 border border-gray-800 hover:border-cyan-500/50 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] rounded-xl"
           >
-            {/* Image Background */}
             <div
               className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity duration-500 scale-100 group-hover:scale-110"
               style={{ backgroundImage: `url(${project.image})` }}
@@ -68,7 +67,6 @@ const Work: React.FC = () => {
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-transparent opacity-90" />
 
-            {/* Content */}
             <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-cyan-400 text-xs font-mono tracking-widest border border-cyan-900 px-2 py-1 rounded bg-cyan-950/30">
@@ -94,13 +92,13 @@ const Work: React.FC = () => {
               </div>
             </div>
 
-            {/* Scanning Line Effect */}
+            {/* Scanning Line */}
             <div className="absolute top-0 left-0 w-full h-1 bg-cyan-400/50 opacity-0 group-hover:opacity-100 animate-[scan_2s_linear_infinite]" />
           </div>
         ))}
       </div>
 
-      {/* Experience Timeline */}
+      {/* Experience */}
       <div className="mb-12">
         <h3 className="text-2xl font-orbitron text-white mb-8 flex items-center gap-2">
           <Zap className="text-purple-500" /> EXECUTION_LOG
@@ -109,7 +107,7 @@ const Work: React.FC = () => {
         <div className="relative border-l-2 border-gray-800 ml-4 space-y-8">
           {PORTFOLIO_DATA.experience.map((exp, idx) => (
             <div key={idx} className="relative pl-8">
-              {/* Timeline Node */}
+              {/* Node */}
               <div
                 className={`
                   absolute -left-[9px] top-0 w-4 h-4 bg-black rounded-full 
@@ -122,7 +120,6 @@ const Work: React.FC = () => {
                 `}
               />
 
-              {/* Accordion Header */}
               <div
                 onClick={() => toggleAccordion(idx)}
                 onKeyDown={(e) => handleAccordionKeyDown(e, idx)}
@@ -177,7 +174,6 @@ const Work: React.FC = () => {
                 <p className="text-gray-400 leading-relaxed">{exp.desc}</p>
               </div>
 
-              {/* Accordion Content - Contributions */}
               {exp.contributions && (
                 <div
                   id={`experience-content-${idx}`}

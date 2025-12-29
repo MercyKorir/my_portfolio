@@ -33,13 +33,13 @@ const About: React.FC = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 flex flex-col items-center">
-      {/* Bio Section */}
+      {/* Bio */}
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mt-8">
-        {/* Avatar/ID Card */}
+        {/* Avatar card */}
         <div className="md:col-span-1">
           <div className="relative bg-black/40 border border-gray-700 p-6 rounded-2xl backdrop-blur-sm group hover:border-cyan-500/50 transition-colors">
             <div className="w-32 h-32 mx-auto bg-linear-to-br from-gray-800 to-black rounded-full mb-6 border-2 border-cyan-500/30 flex items-center justify-center overflow-hidden">
-              {/* Placeholder for Profile Pic */}
+              {/* Profile Picture */}
               <User size={48} className="text-gray-600" />
             </div>
             <div className="text-center">
@@ -79,7 +79,7 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            {/* ID Barcode Decoration */}
+            {/* Barcode Deco */}
             <div className="mt-6 flex justify-between items-end opacity-30">
               <div
                 className="h-8 w-32 bg-current"
@@ -106,7 +106,7 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      {/* Skills Matrix - Organized by Category */}
+      {/* Skills Matrix */}
       <div className="w-full mb-16">
         <h3 className="text-2xl font-orbitron text-white mb-8 flex items-center gap-2 border-b border-gray-800 pb-2">
           <Layers size={18} className="text-purple-500" /> SKILL_MATRIX

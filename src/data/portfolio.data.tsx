@@ -25,7 +25,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     email: "mailto:korir.mercy.chelangat@gmail.com",
   },
   skills: [
-    // Front-End Technologies
+    // Front-End
     { name: "HTML5", level: 95, icon: <Code2 size={16} /> },
     { name: "CSS3 (SCSS)", level: 90, icon: <Code2 size={16} /> },
     { name: "JavaScript (ES6+)", level: 95, icon: <Code2 size={16} /> },
@@ -35,7 +35,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     { name: "Tailwind CSS", level: 90, icon: <Layers size={16} /> },
     { name: "Material-UI", level: 85, icon: <Layers size={16} /> },
 
-    // Back-End Technologies
+    // Back-End
     { name: "Node.js", level: 90, icon: <Server size={16} /> },
     { name: "Express.js", level: 85, icon: <Server size={16} /> },
     { name: "PHP", level: 80, icon: <FileCode size={16} /> },
