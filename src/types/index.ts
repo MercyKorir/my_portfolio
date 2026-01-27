@@ -1,3 +1,5 @@
+import type { LucideIcon } from "lucide-react";
+
 export type PageState = "home" | "work" | "about";
 
 export interface Skill {
@@ -45,4 +47,11 @@ export interface PortfolioData {
   experience: Experience[];
   projects: Project[];
   certs: Certification[];
+}
+
+export interface NavItem {
+  id: string;
+  name: PageState;
+  label: string;
+  icon: LucideIcon;
 }

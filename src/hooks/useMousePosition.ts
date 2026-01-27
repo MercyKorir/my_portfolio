@@ -16,11 +16,15 @@ export const useMousePosition = () => {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === "BUTTON" || target.tagName === "A") {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
+      const isInteractive =
+        target.tagName === "BUTTON" ||
+        target.tagName === "A" ||
+        target.closest("button") ||
+        target.closest("a") ||
+        target.getAttribute("role") === "button" ||
+        target.style.cursor === "pointer";
+
+      setIsHovering(!!isInteractive);
     };
 
     window.addEventListener("mousemove", updatePosition);

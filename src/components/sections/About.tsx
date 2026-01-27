@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Github,
   Linkedin,
@@ -9,6 +10,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { PORTFOLIO_DATA } from "../../data/portfolio.data";
+import AnimatedSection from "../common/AnimatedSection";
+import GlitchText from "../common/GlitchText";
 
 const About: React.FC = () => {
   const handleCertClick = (certUrl?: string) => {
@@ -32,181 +35,230 @@ const About: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 flex flex-col items-center">
-      {/* Bio */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mt-8">
-        {/* Avatar card */}
-        <div className="md:col-span-1">
-          <div className="relative bg-black/40 border border-gray-700 p-6 rounded-2xl backdrop-blur-sm group hover:border-cyan-500/50 transition-colors">
-            <div className="w-32 h-32 mx-auto bg-linear-to-br from-gray-800 to-black rounded-full mb-6 border-2 border-cyan-500/30 flex items-center justify-center overflow-hidden">
-              {/* Profile Picture */}
-              <User size={48} className="text-gray-600" />
-            </div>
-            <div className="text-center">
-              <h2 className="text-xl font-bold text-white font-orbitron mb-1">
+    <section className="min-h-screen py-32">
+      <div className="container mx-auto px-6">
+        {/* Bio */}
+        <AnimatedSection className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          {/* Avatar card */}
+          <motion.div className="md:col-span-1" whileHover={{ scale: 1.02 }}>
+            <div className="relative card-glow rounded-2xl p-8 text-center group">
+              <motion.div
+                className="w-32 h-32 mx-auto mb-6 rounded-full border-2 border-primary/30 flex items-center justify-center bg-linear-to-br from-secondary to-background overflow-hidden"
+                animate={{
+                  boxShadow: [
+                    "0 0 20px hsl(180 100% 50% / 0.2)",
+                    "0 0 40px hsl(180 100% 50% / 0.4)",
+                    "0 0 20px hsl(180 100% 50% / 0.2)",
+                  ],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                {/* Profile Picture */}
+                <User size={48} className="text-muted-foreground" />
+              </motion.div>
+
+              <h2 className="font-orbitron text-xl font-bold text-foreground mb-1">
                 {PORTFOLIO_DATA.name}
               </h2>
-              <p className="text-cyan-500 text-sm font-mono mb-4">
+              <p className="text-primary font-tech-mono text-sm mb-6">
                 {PORTFOLIO_DATA.role}
               </p>
 
-              <div className="flex justify-center gap-4 mt-6">
-                <a
-                  href={PORTFOLIO_DATA.socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visit GitHub profile"
-                  className="text-gray-400 hover:text-white hover:scale-110 transition-all"
-                >
-                  <Github size={20} />
-                </a>
-                <a
-                  href={PORTFOLIO_DATA.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visit LinkedIn profile"
-                  className="text-gray-400 hover:text-white hover:scale-110 transition-all"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a
-                  href={PORTFOLIO_DATA.socials.email}
-                  aria-label="Send email"
-                  className="text-gray-400 hover:text-white hover:scale-110 transition-all"
-                >
-                  <Mail size={20} />
-                </a>
+              <div className="flex justify-center gap-4 mb-6">
+                {[
+                  {
+                    icon: Github,
+                    href: PORTFOLIO_DATA.socials.github,
+                    name: "GitHub",
+                  },
+                  {
+                    icon: Linkedin,
+                    href: PORTFOLIO_DATA.socials.linkedin,
+                    name: "LinkedIn",
+                  },
+                  {
+                    icon: Mail,
+                    href: PORTFOLIO_DATA.socials.email,
+                    name: "Email",
+                  },
+                ].map(({ icon: Icon, href, name }, index) => (
+                  <motion.a
+                    key={index}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${name} profile`}
+                    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Icon size={18} />
+                  </motion.a>
+                ))}
+              </div>
+
+              {/* Barcode Deco */}
+              <div className="flex justify-between items-end opacity-30 mt-6">
+                <div
+                  className="h-8 w-32 bg-current"
+                  style={{
+                    clipPath:
+                      "polygon(0 0, 100% 0, 100% 20%, 0 20%, 0 40%, 100% 40%, 100% 60%, 0 60%, 0 80%, 100% 80%, 100% 100%, 0 100%)",
+                  }}
+                />
+                <span className="font-tech-mono text-[10px]">ID: 884-XJ</span>
               </div>
             </div>
+          </motion.div>
 
-            {/* Barcode Deco */}
-            <div className="mt-6 flex justify-between items-end opacity-30">
-              <div
-                className="h-8 w-32 bg-current"
-                style={{
-                  clipPath:
-                    "polygon(0 0, 100% 0, 100% 20%, 0 20%, 0 40%, 100% 40%, 100% 60%, 0 60%, 0 80%, 100% 80%, 100% 100%, 0 100%)",
-                }}
-              />
-              <div className="font-mono text-[10px]">ID: 884-XJ</div>
+          {/* Bio Text */}
+          <div className="md:col-span-2 flex flex-col justify-center">
+            <div className="card-glow rounded-lg p-8 border-l-2 border-primary">
+              <p className="text-muted-foreground font-tech-mono text-sm mb-4">
+                // BIO_SUMMARY
+              </p>
+              <p className="text-foreground/90 leading-relaxed text-lg">
+                {PORTFOLIO_DATA.bio}
+              </p>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
 
-        {/* Bio Text */}
-        <div className="md:col-span-2 flex flex-col justify-center">
-          <div className="bg-gray-900/30 border-l-2 border-cyan-500 p-6 rounded-r-lg">
-            <h3 className="text-gray-500 font-mono text-sm mb-2">
-              // BIO_SUMMARY
-            </h3>
-            <p className="text-lg text-gray-300 leading-relaxed font-light">
-              {PORTFOLIO_DATA.bio}
-            </p>
+        {/* Skills Matrix */}
+        <AnimatedSection className="mb-24">
+          <div className="flex items-center gap-3 mb-8 border-b border-border pb-4">
+            <Layers className="text-accent" size={24} />
+            <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-foreground">
+              <GlitchText text="SKILL_MATRIX" />
+            </h2>
           </div>
-        </div>
-      </div>
 
-      {/* Skills Matrix */}
-      <div className="w-full mb-16">
-        <h3 className="text-2xl font-orbitron text-white mb-8 flex items-center gap-2 border-b border-gray-800 pb-2">
-          <Layers size={18} className="text-purple-500" /> SKILL_MATRIX
-        </h3>
+          {Object.entries(skillCategories).map(
+            ([category, skills], categoryIdx) => (
+              <motion.div
+                key={category}
+                className="mb-10"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: categoryIdx * 0.1 }}
+              >
+                <h3 className="text-sm font-tech-mono text-primary mb-4 uppercase tracking-wider">
+                  {category}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {skills.map((skill, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="bg-secondary/20 border border-border p-3 rounded flex items-center gap-3 hover:border-primary/30 transition-colors group"
+                      whileHover={{ scale: 1.02, x: 5 }}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.05 }}
+                    >
+                      <div className="text-primary group-hover:scale-110 transition-transform">
+                        {skill.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm text-foreground font-tech-mono truncate">
+                            {skill.name}
+                          </span>
+                          <span className="text-xs text-muted-foreground shrink-0 ml-2">
+                            {skill.level}%
+                          </span>
+                        </div>
+                        <div className="h-1 w-full bg-secondary rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-linear-to-r from-primary to-accent skill-bar"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{
+                              duration: 1,
+                              delay: idx * 0.05,
+                              ease: "easeOut",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ),
+          )}
+        </AnimatedSection>
 
-        {Object.entries(skillCategories).map(([category, skills]) => (
-          <div key={category} className="mb-8">
-            <h4 className="text-sm font-mono text-cyan-500 mb-4 uppercase tracking-wider">
-              {category}
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {skills.map((skill, idx) => (
-                <div
-                  key={idx}
-                  className="bg-black/20 border border-gray-800 p-3 rounded flex items-center gap-3 hover:border-cyan-500/30 transition-colors"
+        {/* Certifications */}
+        <AnimatedSection>
+          <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-foreground mb-8 border-b border-border pb-4">
+            <GlitchText text="AUTH_KEYS" />
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {PORTFOLIO_DATA.certs.map((cert, index) => (
+              <motion.div
+                key={index}
+                onClick={() => handleCertClick(cert.certUrl)}
+                onKeyDown={(e) => handleKeyDown(e, cert.certUrl)}
+                role={cert.certUrl ? "button" : undefined}
+                tabIndex={cert.certUrl ? 0 : undefined}
+                aria-label={
+                  cert.certUrl ? `View ${cert.title} certificate` : undefined
+                }
+                className={`relative group card-glow rounded-lg p-6 overflow-hidden hover:border-accent/50 transition-all ${
+                  cert.certUrl ? "cursor-pointer" : ""
+                }`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0 0 20px hsl(280 100% 65% / 0.15)",
+                }}
+              >
+                <motion.div
+                  className="absolute top-4 right-4 text-muted-foreground/10 group-hover:text-muted-foreground/20 transition-colors"
+                  animate={{ rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
                 >
-                  <div className="text-cyan-400">{skill.icon}</div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm text-gray-300 font-mono truncate">
-                        {skill.name}
-                      </span>
-                      <span className="text-xs text-gray-500 shrink-0 ml-2">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-1 w-full bg-gray-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-linear-to-r from-cyan-600 to-purple-600"
-                        style={{ width: `${skill.level}%` }}
+                  <Award size={64} />
+                </motion.div>
+
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="font-rajdhani text-xl font-bold text-foreground group-hover:text-accent transition-colors flex-1">
+                      {cert.title}
+                    </h3>
+                    {cert.certUrl && (
+                      <ExternalLink
+                        className="text-accent/50 group-hover:text-accent transition-colors shrink-0 ml-2"
+                        size={18}
+                        aria-hidden="true"
                       />
-                    </div>
+                    )}
+                  </div>
+                  <p className="text-accent font-tech-mono text-sm mb-3">
+                    {cert.issuer}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground text-sm">
+                      {cert.date}
+                    </span>
+                    <span className="font-tech-mono text-xs text-muted-foreground bg-secondary px-2 py-1 rounded border border-border">
+                      {cert.id}
+                    </span>
                   </div>
                 </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-        ))}
+        </AnimatedSection>
       </div>
-
-      {/* Certifications */}
-      <div className="w-full mb-20">
-        <h3 className="text-2xl font-orbitron text-white mb-8 border-b border-gray-800 pb-2">
-          AUTHORIZATION_KEYS
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {PORTFOLIO_DATA.certs.map((cert, idx) => (
-            <div
-              key={idx}
-              onClick={() => handleCertClick(cert.certUrl)}
-              onKeyDown={(e) => handleKeyDown(e, cert.certUrl)}
-              role={cert.certUrl ? "button" : undefined}
-              tabIndex={cert.certUrl ? 0 : undefined}
-              aria-label={
-                cert.certUrl ? `View ${cert.title} certificate` : undefined
-              }
-              className={`
-                relative group bg-linear-to-r from-gray-900 to-black border 
-                border-gray-800 p-6 rounded-lg overflow-hidden 
-                hover:border-purple-500/50 transition-all
-                ${
-                  cert.certUrl
-                    ? "cursor-pointer hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]"
-                    : ""
-                }
-              `}
-            >
-              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Award size={64} />
-              </div>
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-2">
-                  <h4 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors flex-1">
-                    {cert.title}
-                  </h4>
-                  {cert.certUrl && (
-                    <ExternalLink
-                      className="text-purple-400 group-hover:text-purple-300 transition-colors shrink-0 ml-2"
-                      size={18}
-                      aria-hidden="true"
-                    />
-                  )}
-                </div>
-                <p className="text-purple-400 font-mono text-sm mt-1">
-                  {cert.issuer}
-                </p>
-                <div className="flex justify-between items-end mt-4">
-                  <span className="text-xs text-gray-500 font-mono">
-                    {cert.date}
-                  </span>
-                  <span className="text-xs text-gray-600 font-mono border border-gray-800 px-2 py-0.5 rounded">
-                    {cert.id}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

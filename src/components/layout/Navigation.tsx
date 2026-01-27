@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Home, Briefcase, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import type { PageState } from "../../types";
 import GlitchText from "../common/GlitchText";
 import NavItem from "../common/NavItem";
+import { NAV_ITEMS } from "../../data/portfolio.data";
 
 interface NavigationProps {
   activePage: PageState;
@@ -20,93 +22,98 @@ const Navigation: React.FC<NavigationProps> = ({
     setIsMenuOpen(false);
   };
   return (
-    <nav className="fixed top-0 left-0 w-full z-40 bg-[#050505]/80 backdrop-blur-md border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse shadow-[0_0_8px_#06b6d4]" />
-          <span className="font-orbitron font-bold text-lg tracking-wider text-white">
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <motion.div
+          className="flex items-center gap-2 cursor-pointer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleNavClick("home")}
+        >
+          <motion.span
+            className="w-3 h-3 rounded-full bg-primary"
+            animate={{
+              boxShadow: [
+                "0 0 0 0 hsl(180 100% 50% / 0.7)",
+                "0 0 0 8px hsl(180 100% 50% / 0)",
+                "0 0 0 0 hsl(180 100% 50% / 0.7)",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+          <span className="font-orbitron text-xl font-bold text-foreground tracking-wider">
             <GlitchText text="MERCY.DEV" />
           </span>
-        </div>
+        </motion.div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center h-full">
-          <NavItem
-            page="home"
-            icon={<Home size={18} />}
-            label="HOME"
-            activePage={activePage}
-            onClick={handleNavClick}
-          />
-          <NavItem
-            page="work"
-            icon={<Briefcase size={18} />}
-            label="WORK"
-            activePage={activePage}
-            onClick={handleNavClick}
-          />
-          <NavItem
-            page="about"
-            icon={<User size={18} />}
-            label="ABOUT"
-            activePage={activePage}
-            onClick={handleNavClick}
-          />
-        </div>
+        <nav className="hidden md:flex items-center gap-8">
+          {NAV_ITEMS.map((item) => {
+            const Icon = item.icon;
+            const isActive = activePage === item.name;
+
+            return (
+              <NavItem
+                key={item.id}
+                page={item.name}
+                Icon={Icon}
+                label={item.label}
+                isActive={isActive}
+                navKey={item.id}
+                isMenuOpen={isMenuOpen}
+                onClick={handleNavClick}
+              />
+            );
+          })}
+        </nav>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-cyan-400 p-2"
+        <motion.button
+          className="md:hidden text-primary p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          whileTap={{ scale: 0.95 }}
           aria-label="Toggle menu"
         >
-          <div className="space-y-1.5">
-            <span
-              className={`block w-6 h-0.5 bg-current transform transition-all ${
-                isMenuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-current transition-all ${
-                isMenuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-current transform transition-all ${
-                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
-          </div>
-        </button>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </motion.button>
       </div>
 
       {/* Mobile Nav Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-800 bg-black/95 backdrop-blur-xl absolute w-full">
-          <NavItem
-            page="home"
-            icon={<Home size={20} />}
-            label="HOME"
-            activePage={activePage}
-            onClick={handleNavClick}
-          />
-          <NavItem
-            page="work"
-            icon={<Briefcase size={20} />}
-            label="WORK"
-            activePage={activePage}
-            onClick={handleNavClick}
-          />
-          <NavItem
-            page="about"
-            icon={<User size={20} />}
-            label="ABOUT"
-            activePage={activePage}
-            onClick={handleNavClick}
-          />
-        </div>
-      )}
-    </nav>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {NAV_ITEMS.map((item) => {
+              const Icon = item.icon;
+              const isActive = activePage === item.name;
+
+              return (
+                <NavItem
+                  key={item.id}
+                  page={item.name}
+                  Icon={Icon}
+                  label={item.label}
+                  isActive={isActive}
+                  navKey={item.id}
+                  isMenuOpen={isMenuOpen}
+                  onClick={handleNavClick}
+                />
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 };
 

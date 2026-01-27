@@ -3,6 +3,8 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import CustomCursor from "../common/CustomCursor";
 import type { PageState } from "../../types";
+import MatrixRain from "../common/MatrixRain";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,20 +18,32 @@ const Layout: React.FC<LayoutProps> = ({
   onPageChange,
 }) => {
   return (
-    <div className="min-h-screen bg-[#050505] text-gray-300 font-sans selection:bg-cyan-500/30 selection:text-white overflow-x-hidden">
-      <CustomCursor />
-      <Navigation activePage={activePage} onPageChange={onPageChange} />
+    <AnimatePresence>
+      <motion.div
+        className="min-h-screen bg-background text-foreground overflow-x-hidden scanlines"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <CustomCursor />
 
-      <main className="pt-20 min-h-screen relative">
+        <MatrixRain />
+
         {/* Glow */}
-        <div className="fixed top-20 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
-        <div className="fixed bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
+        <div className="fixed top-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="fixed bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
-        {children}
-      </main>
+        <Navigation activePage={activePage} onPageChange={onPageChange} />
 
-      <Footer />
-    </div>
+        <main className="relative z-10">
+          {children}
+          {activePage !== "home" && <Footer />}
+        </main>
+
+        <div className="fixed top-20 left-2 md:left-4 w-16 h-16 border-l-2 border-t-2 border-primary/20 pointer-events-none" />
+        <div className="fixed bottom-2 md:bottom-4 right-2 md:right-4 w-16 h-16 border-r-2 border-b-2 border-primary/20 pointer-events-none" />
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

@@ -8,11 +8,20 @@ import {
   GitBranch,
   Box,
   FileCode,
+  Home,
+  Briefcase,
+  User,
 } from "lucide-react";
-import type { PortfolioData } from "../types";
+import type { NavItem, PortfolioData } from "../types";
 
 const cloudinaryName = import.meta.env.VITE_PUBLIC_CLOUDINARY_CLOUD_NAME;
 const cloudBaseUrl = `https://res.cloudinary.com/${cloudinaryName}/image/upload/`;
+
+export const NAV_ITEMS: NavItem[] = [
+  { id: "home", name: "home", label: "HOME", icon: Home },
+  { id: "work", name: "work", label: "WORK", icon: Briefcase },
+  { id: "about", name: "about", label: "ABOUT", icon: User },
+] as const;
 
 export const PORTFOLIO_DATA: PortfolioData = {
   name: "Mercy Chelangat",

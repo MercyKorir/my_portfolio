@@ -1,16 +1,28 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-0 left-0 w-full bg-[#050505] border-t border-gray-900 py-1 px-4 z-30 hidden md:flex justify-between text-[10px] font-mono text-gray-600">
-      <div className="flex gap-4">
-        <span>CPU: OPTIMAL</span>
-        <span>MEM: 64%</span>
-      </div>
-      <div>
-        <span>SECURE_CONNECTION_ESTABLISHED</span>
-      </div>
-    </footer>
+    <motion.footer
+      className="py-12 text-center border-t border-border"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
+      <p className="text-muted-foreground font-tech-mono text-sm">
+        © 2025 MERCY.DEV | SYSTEM_OPERATIONAL
+      </p>
+      <motion.div
+        className="mt-4 flex items-center justify-center gap-2"
+        animate={{ opacity: [1, 0.5, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <span className="w-2 h-2 rounded-full bg-primary" />
+        <span className="text-primary font-tech-mono text-xs">
+          ALL SYSTEMS NOMINAL
+        </span>
+      </motion.div>
+    </motion.footer>
   );
 };
 

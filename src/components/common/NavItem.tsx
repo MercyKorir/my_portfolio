@@ -1,42 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import type { PageState } from "../../types";
+import type { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface NavItemProps {
   page: PageState;
-  icon: React.ReactNode;
+  Icon: LucideIcon;
   label: string;
-  activePage: PageState;
+  isActive: boolean;
+  navKey: string;
+  isMenuOpen: boolean;
   onClick: (page: PageState) => void;
 }
 
 const NavItem: React.FC<NavItemProps> = ({
   page,
-  icon,
+  Icon,
   label,
-  activePage,
+  isActive,
+  navKey,
+  isMenuOpen,
   onClick,
 }) => {
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
+  const isHovered = hoveredItem === navKey;
+
   return (
-    <button
+    <motion.button
       onClick={() => onClick(page)}
+      onMouseEnter={() => {
+        if (!isMenuOpen) {
+          setHoveredItem(navKey);
+        }
+      }}
+      onMouseLeave={() => {
+        if (!isMenuOpen) {
+          setHoveredItem(null);
+        }
+      }}
       className={`
-        flex flex-col items-center justify-center p-4 w-full md:w-auto md:p-2 md:px-6 relative group transition-all
+        flex items-center
         ${
-          activePage === page
-            ? "text-cyan-400"
-            : "text-gray-500 hover:text-gray-300"
+          isMenuOpen
+            ? "gap-4 w-full p-4 transition-colors"
+            : "flex-col gap-1 nav-link cursor-pointer"
+        }
+        ${
+          isActive
+            ? `${isMenuOpen ? "text-primary bg-secondary/50" : "active"}`
+            : `${isMenuOpen ? "text-muted-foreground" : ""}`
         }
       `}
+      whileHover={!isMenuOpen ? { y: -2 } : undefined}
+      whileTap={{ scale: isMenuOpen ? 0.98 : 0.95 }}
     >
-      <div className="mb-1">{icon}</div>
-      <span className="text-[10px] font-orbitron tracking-widest">{label}</span>
+      <Icon
+        size={20}
+        className={
+          isMenuOpen
+            ? ""
+            : `transition-colors duration-300 ${
+                isActive || isHovered ? "text-primary" : "text-muted-foreground"
+              }`
+        }
+      />
+      <span
+        className={`
+          font-orbitron
+          ${
+            isMenuOpen
+              ? "text-sm tracking-widest"
+              : `text-xs tracking-wider transition-colors duration-300 ${
+                  isActive || isHovered
+                    ? "text-foreground"
+                    : "text-muted-foreground"
+                }`
+          }
+        `}
+      >
+        {label}
+      </span>
 
-      {activePage === page && (
-        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-400 shadow-[0_0_10px_#22d3ee]"></span>
-      )}
-
-      <span className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-sm"></span>
-    </button>
+      {isActive &&
+        (isMenuOpen ? (
+          <span className="ml-auto w-2 h-2 rounded-full bg-primary" />
+        ) : (
+          <motion.div
+            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+            layoutId="activeTab"
+            style={{ boxShadow: "0 0 10px hsl(180 100% 50%)" }}
+          />
+        ))}
+    </motion.button>
   );
 };
 
