@@ -1,0 +1,63 @@
+{
+  "name": "MERCY.DEV -  Mercy Chelangat Portfolio",
+  "short_name": "MERCY.DEV",
+  "description": "Full Stack Engineer portfolio...",
+  "id": "/my_portfolio/",
+  "start_url": "/my_portfolio/",
+  "scope": "/my_portfolio/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/my_portfolio/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/my_portfolio/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/my_portfolio/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/my_portfolio/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/my_portfolio/screenshot-wide-about.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "About Page"
+    },
+    {
+      "src": "/my_portfolio/screenshot-wide-work.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Work Page"
+    },
+    {
+      "src": "/my_portfolio/screenshot-mobile-home.png",
+      "sizes": "462x822",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Home Page"
+    }
+  ],
+  "categories": ["portfolio", "development", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
