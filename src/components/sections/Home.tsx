@@ -18,7 +18,7 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
   ];
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative pt-20">
+    <section className="min-h-screen flex flex-col items-center justify-center relative pt-16 md:pt-20">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
@@ -109,20 +109,20 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
       </motion.div>
 
       <motion.div
-        className="card-glow px-4 py-6 md:px-6 rounded-lg max-w-xl mx-auto mb-8"
+        className="card-glow px-4 py-4 md:py-6 md:px-6 rounded-lg max-w-xl mx-auto mb-4 md:mb-8"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
         <TypeWriter
           texts={fullText}
-          className="font-tech-mono md:text-lg text-primary space-y-2"
+          className="font-tech-mono text-[13px] md:text-lg text-primary space-y-1 md:space-y-2"
           speed={40}
         />
       </motion.div>
 
       <motion.p
-        className="text-muted-foreground text-xl font-rajdhani tracking-wide mb-10"
+        className="text-muted-foreground text-xl font-rajdhani tracking-wide mb-4 md:mb-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5 }}
@@ -131,7 +131,7 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
       </motion.p>
 
       <motion.button
-        className="cyber-button group flex items-center gap-2"
+        className="cyber-button group flex items-center gap-1 md:gap-2"
         onClick={() => setPage("work")}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
       </motion.button>
 
       <motion.div
-        className="absolute bottom-4 md:bottom-8 left-4 md:left-8 flex items-center md:gap-2 text-muted-foreground font-tech-mono text-xs"
+        className="absolute bottom-4 md:bottom-8 left-4 md:left-8 flex items-center md:gap-2 text-muted-foreground font-tech-mono text-[10px]  md:text-xs"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 3 }}
@@ -155,7 +155,7 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-4 md:bottom-8 right-4 md:right-8 text-muted-foreground font-tech-mono text-xs"
+        className="absolute bottom-4 md:bottom-8 right-4 md:right-8 text-muted-foreground font-tech-mono text-[10px] md:text-xs"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 3 }}
