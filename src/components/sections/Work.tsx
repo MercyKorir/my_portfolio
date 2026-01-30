@@ -38,7 +38,7 @@ const Work: React.FC = () => {
         <AnimatedSection className="mb-16">
           <div className="flex items-end justify-between border-b border-border pb-4">
             <div>
-              <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-foreground mb-2">
+              <h2 className="font-orbitron text-2xl min-[425px]:text-3xl sm:text-4xl font-bold text-foreground mb-2">
                 <GlitchText text="PROJECT_ARCHIVE" />
               </h2>
               <motion.span
@@ -145,7 +145,7 @@ const Work: React.FC = () => {
             >
               <Zap className="text-accent" size={24} />
             </motion.div>
-            <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="font-orbitron text-2xl min-[425px]:text-3xl sm:text-4xl font-bold text-foreground">
               <GlitchText text="EXECUTION_LOG" />
             </h2>
           </div>
