@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       viewport={{ once: true }}
     >
       <p className="text-muted-foreground font-tech-mono text-sm">
-        © 2025 MERCY.DEV | SYSTEM_OPERATIONAL
+        © 2026 MERCY.DEV | SYSTEM_OPERATIONAL
       </p>
       <motion.div
         className="mt-4 flex items-center justify-center gap-2"
