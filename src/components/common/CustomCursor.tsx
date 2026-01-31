@@ -7,7 +7,7 @@ const CustomCursor: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed pointer-events-none z-50 mix-blend-difference hidden md:block"
+      className="fixed pointer-events-none z-60 mix-blend-difference hidden md:block"
       animate={{
         x: position.x - (isHovering ? 24 : 12),
         y: position.y - (isHovering ? 24 : 12),
