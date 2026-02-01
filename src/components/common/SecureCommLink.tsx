@@ -8,6 +8,7 @@ import {
   Shield,
   Zap,
   MessageSquare,
+  X,
 } from "lucide-react";
 import type { MessagePayload } from "../../types";
 import { phone, QUICK_PAYLOADS } from "../../data/portfolio.data";
@@ -19,6 +20,9 @@ export const SecureCommLink = () => {
   const [nudgePhase, setNudgePhase] = useState(0);
   const [isEncrypting, setIsEncrypting] = useState(false);
   const [signalStrength, setSignalStrength] = useState(100);
+  const [nudgeDismissed, setNudgeDismissed] = useState(() => {
+    return sessionStorage.getItem("commlink-nudge-dismissed") === "true";
+  });
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [randId] = useState(() =>
     Math.random().toString(36).substring(2, 9).toUpperCase(),
@@ -36,6 +40,8 @@ export const SecureCommLink = () => {
   }, []);
 
   useEffect(() => {
+    if (nudgeDismissed) return;
+
     const timer = setTimeout(() => {
       const playNudgeSequence = async () => {
         await new Promise((r) => setTimeout(r, 1000));
@@ -54,12 +60,20 @@ export const SecureCommLink = () => {
     }, 8000);
 
     return () => clearTimeout(timer);
-  }, [isOpen]);
+  }, [isOpen, nudgeDismissed]);
 
   const handleOpen = () => {
     setIsOpen(true);
     setShowNudge(false);
     setTimeout(() => inputRef.current?.focus(), 400);
+  };
+
+  const handleDismissNudge = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowNudge(false);
+    setNudgeDismissed(true);
+
+    sessionStorage.setItem("commlink-nudge-dismissed", "true");
   };
 
   const handleSend = async () => {
@@ -94,14 +108,22 @@ export const SecureCommLink = () => {
               exit={{ opacity: 0, y: -20, scale: 0.9 }}
               className="pointer-events-auto"
             >
-              <div
-                className="relative group cursor-pointer"
-                onClick={handleOpen}
-              >
-                <div className="backdrop-blur-md p-4 rounded-lg card-glow max-w-[280px] relative overflow-hidden">
+              <div className="relative group">
+                <div
+                  className="backdrop-blur-md p-4 rounded-lg card-glow max-w-[280px] relative overflow-hidden cursor-pointer"
+                  onClick={handleOpen}
+                >
                   <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,255,212,0.02)_50%)] bg-size-[100%_4px] pointer-events-none"></div>
 
-                  <div className="relative z-10">
+                  <button
+                    onClick={handleDismissNudge}
+                    className="absolute top-2 right-2 z-20 w-5 h-5 rounded-full bg-background/80 border border-border/50 hover:border-destructive/50 hover:bg-destructive/10 flex items-center justify-center transition-all duration-200 group/close"
+                    aria-label="Dismiss notification"
+                  >
+                    <X className="w-3 h-3 text-muted-foreground group-hover/close:text-destructive transition-colors" />
+                  </button>
+
+                  <div className="relative z-10 pr-6">
                     <div className="flex items-center gap-2 mb-2">
                       <Radio
                         className={`w-3 h-3 ${nudgePhase >= 1 ? "text-terminal-green animate-pulse" : "text-secondary"}`}
