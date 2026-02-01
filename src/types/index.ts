@@ -55,3 +55,9 @@ export interface NavItem {
   label: string;
   icon: LucideIcon;
 }
+
+export interface MessagePayload {
+  id: string;
+  text: string;
+  label: string;
+}

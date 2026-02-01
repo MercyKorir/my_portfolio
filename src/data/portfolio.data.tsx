@@ -12,16 +12,35 @@ import {
   Briefcase,
   User,
 } from "lucide-react";
-import type { NavItem, PortfolioData } from "../types";
+import type { NavItem, PortfolioData, MessagePayload } from "../types";
 
 const cloudinaryName = import.meta.env.VITE_PUBLIC_CLOUDINARY_CLOUD_NAME;
 const cloudBaseUrl = `https://res.cloudinary.com/${cloudinaryName}/image/upload/`;
+export const phone: string = `${import.meta.env.VITE_PHONE_NUMBER}`;
 
 export const NAV_ITEMS: NavItem[] = [
   { id: "home", name: "home", label: "HOME", icon: Home },
   { id: "work", name: "work", label: "WORK", icon: Briefcase },
   { id: "about", name: "about", label: "ABOUT", icon: User },
 ] as const;
+
+export const QUICK_PAYLOADS: MessagePayload[] = [
+  {
+    id: "collab",
+    label: "COLLAB_REQUEST",
+    text: "Hey Mercy, I saw your portfolio and I'm interested in collaborating on a project. Are you available?",
+  },
+  {
+    id: "hire",
+    label: "CONTRACT_PROPOSAL",
+    text: "Hi Mercy, I have a full-stack project that needs your expertise. Can we discuss details?",
+  },
+  {
+    id: "coffee",
+    label: "CASUAL_PING",
+    text: "Hello! Love your work on the Task Manager. Would love to grab a virtual coffee and chat!",
+  },
+];
 
 export const PORTFOLIO_DATA: PortfolioData = {
   name: "Mercy Chelangat",

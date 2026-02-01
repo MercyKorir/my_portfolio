@@ -50,6 +50,7 @@ jobs:
       - name: Build with Vite 🏗️
         env:
           VITE_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.VITE_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+          VITE_PHONE_NUMBER: ${{ secrets.VITE_PHONE_NUMBER }}
           NODE_ENV: production
         run: npm run build
 

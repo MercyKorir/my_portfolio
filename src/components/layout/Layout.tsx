@@ -5,6 +5,7 @@ import CustomCursor from "../common/CustomCursor";
 import type { PageState } from "../../types";
 import MatrixRain from "../common/MatrixRain";
 import { motion, AnimatePresence } from "framer-motion";
+import { SecureCommLink } from "../common/SecureCommLink";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -42,6 +43,8 @@ const Layout: React.FC<LayoutProps> = ({
 
         <div className="fixed top-20 left-2 md:left-4 w-16 h-16 border-l-2 border-t-2 border-primary/20 pointer-events-none" />
         <div className="fixed bottom-2 md:bottom-4 right-2 md:right-4 w-16 h-16 border-r-2 border-b-2 border-primary/20 pointer-events-none" />
+
+        <SecureCommLink />
       </motion.div>
     </AnimatePresence>
   );
