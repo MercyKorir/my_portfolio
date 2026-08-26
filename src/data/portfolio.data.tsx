@@ -60,8 +60,10 @@ export const PORTFOLIO_DATA: PortfolioData = {
     { name: "TypeScript", level: 90, icon: <Code2 size={16} /> },
     { name: "React.js", level: 95, icon: <Globe size={16} /> },
     { name: "Next.js", level: 85, icon: <Globe size={16} /> },
+    { name: "TanStack Query", level: 75, icon: <Globe size={16} /> },
     { name: "Tailwind CSS", level: 90, icon: <Layers size={16} /> },
     { name: "Material-UI", level: 85, icon: <Layers size={16} /> },
+    { name: "shadcn/ui", level: 75, icon: <Layers size={16} /> },
 
     // Back-End
     { name: "Node.js", level: 90, icon: <Server size={16} /> },
@@ -79,6 +81,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
     { name: "MySQL", level: 90, icon: <Database size={16} /> },
     { name: "Firebase", level: 85, icon: <Database size={16} /> },
     { name: "PostgreSQL", level: 80, icon: <Database size={16} /> },
+    { name: "Drizzle ORM", level: 75, icon: <Database size={16} /> },
+    { name: "Neon (Serverless Postgres)", level: 75, icon: <Database size={16} /> },
 
     // Version Control
     { name: "Git/GitHub", level: 95, icon: <GitBranch size={16} /> },
@@ -86,12 +90,26 @@ export const PORTFOLIO_DATA: PortfolioData = {
     // DevOps & Tools
     { name: "Docker", level: 80, icon: <Box size={16} /> },
     { name: "CI/CD Pipelines", level: 75, icon: <Box size={16} /> },
+    { name: "Google Cloud Platform", level: 70, icon: <Box size={16} /> },
+    { name: "n8n / Make.com", level: 70, icon: <Box size={16} /> },
     { name: "Linux", level: 85, icon: <Terminal size={16} /> },
     { name: "Redis", level: 70, icon: <Database size={16} /> },
     { name: "nginx", level: 75, icon: <Server size={16} /> },
     { name: "Apache", level: 75, icon: <Server size={16} /> },
   ],
   experience: [
+    {
+      company: "Simple Lend Marketplace",
+      role: "Full Stack Developer (Contract)",
+      date: "May 2026 - Present",
+      desc: "Remote marketplace platform connecting buyers, sellers, and lenders for commercial trucks and heavy equipment.",
+      isCurrent: true,
+      contributions: [
+        "Own full-stack feature development end-to-end for the Simple Lend CRM — database schema, API routes, and React frontend — using TypeScript, Node.js, Express, and PostgreSQL (Neon) with Drizzle ORM.",
+        "Build internal automation tooling, notification systems, and reporting dashboards, integrating with HubSpot, payment processors, and other third-party APIs via n8n/Make.com.",
+        "Deploy and maintain services on Google Cloud Run with Cloud Build CI/CD pipelines, contributing across the core CRM, internal tools, and new product surfaces as an early engineering hire.",
+      ],
+    },
     {
       company: "Upwork",
       role: "Full Stack Developer",

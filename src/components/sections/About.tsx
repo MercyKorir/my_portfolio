@@ -28,10 +28,10 @@ const About: React.FC = () => {
   };
 
   const skillCategories = {
-    "Front-End": PORTFOLIO_DATA.skills.slice(0, 8),
-    "Back-End": PORTFOLIO_DATA.skills.slice(8, 17),
-    Databases: PORTFOLIO_DATA.skills.slice(17, 21),
-    "DevOps & Tools": PORTFOLIO_DATA.skills.slice(21),
+    "Front-End": PORTFOLIO_DATA.skills.slice(0, 10),
+    "Back-End": PORTFOLIO_DATA.skills.slice(10, 19),
+    "Databases": PORTFOLIO_DATA.skills.slice(19, 25),
+    "DevOps & Tools": PORTFOLIO_DATA.skills.slice(25),
   };
 
   return (
